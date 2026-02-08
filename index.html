@@ -27,11 +27,16 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
         }
+        .group-btn-active {
+            background-color: #1e40af;
+            color: white;
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <!-- Navegación Modificada con Enlaces a Páginas Futuras -->
+    <!-- Navegación -->
     <nav class="bg-white shadow-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
@@ -49,7 +54,7 @@
         </div>
     </nav>
 
-    <!-- Bienvenida con Nombre del Docente -->
+    <!-- Bienvenida -->
     <header id="inicio" class="gradient-bg text-white py-16 px-4">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between">
             <div class="md:w-1/2 mb-10 md:mb-0">
@@ -71,18 +76,18 @@
             </div>
             <div class="md:w-1/2 flex justify-center">
                 <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop" 
-                     alt="[Estudiantes colaborando]" 
+                     alt="Estudiantes colaborando" 
                      class="rounded-3xl shadow-2xl w-full max-w-md border-4 border-white/20 object-cover h-80">
             </div>
         </div>
     </header>
 
-    <!-- Evaluación Simple -->
+    <!-- Evaluación y Encuadre -->
     <section id="evaluacion" class="py-16 max-w-7xl mx-auto px-4 text-center">
         <h2 class="text-3xl font-bold text-gray-900 mb-2">¿Cómo vamos a calificar?</h2>
         <p class="text-gray-600 mb-12 italic">Criterios de evaluación por parcial</p>
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
             <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 card-hover">
                 <div class="text-4xl text-blue-600 bg-blue-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6"><i class="fas fa-edit"></i></div>
                 <h3 class="font-bold text-xl mb-2">40% Firmas</h3>
@@ -98,6 +103,86 @@
                 <h3 class="font-bold text-xl mb-2">10% Asistencia</h3>
                 <p class="text-gray-500 text-sm">Puntualidad y disposición para participar cada día.</p>
             </div>
+        </div>
+
+        <!-- Selección de Grupo para Classroom -->
+        <div class="mb-8">
+            <h3 class="text-xl font-bold text-gray-800 mb-6 uppercase tracking-wider">Acceso a Google Classroom</h3>
+            <div class="flex justify-center gap-4">
+                <button onclick="showGroup('D')" id="btnGroupD" class="px-8 py-3 rounded-full bg-white border border-blue-200 shadow-sm font-bold text-blue-600 hover:bg-blue-50 transition-all">
+                    VER GRUPO D
+                </button>
+                <button onclick="showGroup('E')" id="btnGroupE" class="px-8 py-3 rounded-full bg-white border border-blue-200 shadow-sm font-bold text-blue-600 hover:bg-blue-50 transition-all">
+                    VER GRUPO E
+                </button>
+            </div>
+        </div>
+
+        <!-- Contenedor de Grupos (Ocultos por defecto) -->
+        <div id="classroom-groups" class="max-w-4xl mx-auto">
+            
+            <!-- Tarjeta Grupo D -->
+            <div id="groupCardD" class="hidden animate-fadeIn bg-white p-8 rounded-3xl shadow-lg border border-blue-100 flex flex-col md:flex-row items-center justify-center gap-8 card-hover relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-blue-600 text-white font-black px-10 py-1 transform rotate-45 translate-x-8 translate-y-4 shadow-sm text-sm">
+                    GRUPO D
+                </div>
+                <div class="flex-shrink-0 bg-gray-50 p-4 rounded-2xl border-2 border-dashed border-blue-200">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://classroom.google.com/c/ODQzNzA3NjE2ODY0?cjc=h2cxl2am"
+                         alt="QR Google Classroom Grupo D"
+                         class="w-40 h-40">
+                    <p class="text-[10px] text-gray-400 mt-2 uppercase font-bold tracking-tighter text-center">Escanear para unirse</p>
+                </div>
+                <div class="text-left">
+                    <h3 class="text-2xl font-bold text-blue-900 mb-2 flex items-center">
+                        <i class="fas fa-graduation-cap mr-3 text-green-600"></i> Google Classroom <span class="ml-2 text-sm bg-blue-100 text-blue-700 px-2 py-1 rounded-lg">Grupo D</span>
+                    </h3>
+                    <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                        Plataforma para subir evidencias y tareas del <strong>Grupo D</strong>.
+                    </p>
+                    <div class="flex flex-wrap gap-3 items-center">
+                        <span class="bg-blue-50 text-blue-700 px-4 py-2 rounded-xl text-sm font-bold border border-blue-100">
+                            Código: h2cxl2am
+                        </span>
+                        <a href="https://classroom.google.com/c/ODQzNzA3NjE2ODY0?cjc=h2cxl2am" 
+                           target="_blank" 
+                           class="bg-blue-600 text-white px-6 py-2 rounded-xl font-bold shadow-md hover:bg-blue-700 transition">
+                            Ir a la Clase
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta Grupo E -->
+            <div id="groupCardE" class="hidden animate-fadeIn bg-white p-8 rounded-3xl shadow-lg border border-blue-100 flex flex-col md:flex-row items-center justify-center gap-8 card-hover relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-yellow-400 text-blue-900 font-black px-10 py-1 transform rotate-45 translate-x-8 translate-y-4 shadow-sm text-sm">
+                    GRUPO E
+                </div>
+                <div class="flex-shrink-0 bg-gray-50 p-4 rounded-2xl border-2 border-dashed border-blue-200">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://classroom.google.com/c/ODQzNzA3Mjg5Nzc3?cjc=xcdaogr7"
+                         alt="QR Google Classroom Grupo E"
+                         class="w-40 h-40">
+                    <p class="text-[10px] text-gray-400 mt-2 uppercase font-bold tracking-tighter text-center">Escanear para unirse</p>
+                </div>
+                <div class="text-left">
+                    <h3 class="text-2xl font-bold text-blue-900 mb-2 flex items-center">
+                        <i class="fas fa-graduation-cap mr-3 text-green-600"></i> Google Classroom <span class="ml-2 text-sm bg-yellow-100 text-yellow-800 px-2 py-1 rounded-lg">Grupo E</span>
+                    </h3>
+                    <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                        Plataforma para subir evidencias y tareas del <strong>Grupo E</strong>.
+                    </p>
+                    <div class="flex flex-wrap gap-3 items-center">
+                        <span class="bg-yellow-50 text-yellow-700 px-4 py-2 rounded-xl text-sm font-bold border border-yellow-100">
+                            Código: xcdaogr7
+                        </span>
+                        <a href="https://classroom.google.com/c/ODQzNzA3Mjg5Nzc3?cjc=xcdaogr7" 
+                           target="_blank" 
+                           class="bg-blue-600 text-white px-6 py-2 rounded-xl font-bold shadow-md hover:bg-blue-700 transition">
+                            Ir a la Clase
+                        </a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -121,9 +206,9 @@
                 </div>
                 <div class="lg:w-1/2 grid grid-cols-2 gap-4">
                     <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=400&auto=format&fit=crop" 
-                         alt="[Tecnología educativa]" class="rounded-2xl shadow-lg h-48 w-full object-cover">
+                         alt="Tecnología educativa" class="rounded-2xl shadow-lg h-48 w-full object-cover">
                     <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=400&auto=format&fit=crop" 
-                         alt="[Colaboración]" class="rounded-2xl shadow-lg mt-8 h-48 w-full object-cover">
+                         alt="Colaboración" class="rounded-2xl shadow-lg mt-8 h-48 w-full object-cover">
                 </div>
             </div>
         </div>
@@ -134,26 +219,26 @@
         <div class="max-w-7xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-gray-900 mb-2">¿De qué me sirve esto en la vida real? 🌎</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-                <div class="bg-white p-8 rounded-3xl shadow-lg border-b-8 border-blue-500 card-hover">
+                <div class="bg-white p-8 rounded-3xl shadow-lg border-b-8 border-blue-500 card-hover text-left">
                     <i class="fas fa-users-cog text-blue-500 text-4xl mb-4"></i>
                     <h3 class="font-bold text-xl mb-4 text-blue-900">Organizar Eventos</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed text-left">
+                    <p class="text-gray-600 text-sm leading-relaxed">
                         Organiza una fiesta o un torneo usando documentos compartidos donde todos escriben quién trae qué en tiempo real. ¡Sin confusiones!
                     </p>
                 </div>
 
-                <div class="bg-white p-8 rounded-3xl shadow-lg border-b-8 border-purple-500 card-hover">
+                <div class="bg-white p-8 rounded-3xl shadow-lg border-b-8 border-purple-500 card-hover text-left">
                     <i class="fas fa-search-location text-purple-500 text-4xl mb-4"></i>
                     <h3 class="font-bold text-xl mb-4 text-purple-900">Investigar Problemas</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed text-left">
+                    <p class="text-gray-600 text-sm leading-relaxed">
                         ¿Hay un problema en tu colonia? Aprende a investigar en redes de forma ética para entender qué pasa y cómo proponer una solución.
                     </p>
                 </div>
 
-                <div class="bg-white p-8 rounded-3xl shadow-lg border-b-8 border-green-500 card-hover">
+                <div class="bg-white p-8 rounded-3xl shadow-lg border-b-8 border-green-500 card-hover text-left">
                     <i class="fas fa-chart-line text-green-500 text-4xl mb-4"></i>
                     <h3 class="font-bold text-xl mb-4 text-green-900">Ayudar a otros</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed text-left">
+                    <p class="text-gray-600 text-sm leading-relaxed">
                         Analiza datos de precios y crea un blog sencillo para informar a tus vecinos sobre dónde ahorrar o encontrar ayuda.
                     </p>
                 </div>
@@ -161,7 +246,7 @@
         </div>
     </section>
 
-    <!-- Temario Dinámico (Todo en uno para Referencia) -->
+    <!-- Temario Dinámico -->
     <section id="temario" class="py-16 bg-white border-t border-gray-100 scroll-mt-20">
         <div class="max-w-4xl mx-auto px-4">
             <div class="text-center mb-10">
@@ -178,84 +263,131 @@
             <!-- Contenidos Dinámicos -->
             <div class="bg-white rounded-3xl border border-gray-100 shadow-xl overflow-hidden min-h-[450px]">
                 
-                <!-- Contenido Parcial 1 -->
                 <div id="content1" class="p-8">
                     <h3 class="text-2xl font-bold text-blue-900 mb-2">¡A trabajar en equipo!</h3>
                     <p class="text-blue-600 mb-6 font-semibold"><i class="far fa-calendar-alt mr-2"></i>09 de febrero al 20 de marzo</p>
                     <ul class="space-y-4">
-                        <li class="p-4 bg-blue-50 rounded-xl flex items-center">
+                        <li class="p-4 bg-blue-50 rounded-xl flex items-center shadow-sm">
                             <span class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-4 shrink-0">1</span>
                             <span>Fundamentos del Trabajo Colaborativo Digital.</span>
                         </li>
-                        <li class="p-4 bg-blue-50 rounded-xl flex items-center">
+                        <li class="p-4 bg-blue-50 rounded-xl flex items-center shadow-sm">
                             <span class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-4 shrink-0">2</span>
                             <span>Ecosistema de las TICCAD de Libre Acceso.</span>
                         </li>
-                        <li class="p-4 bg-blue-50 rounded-xl flex items-center">
+                        <li class="p-4 bg-blue-50 rounded-xl flex items-center shadow-sm">
                             <span class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-4 shrink-0">3</span>
                             <span>Plataformas de Edición Colectiva (Cryptpad).</span>
                         </li>
-                        <li class="p-4 bg-blue-50 rounded-xl flex items-center">
+                        <li class="p-4 bg-blue-50 rounded-xl flex items-center shadow-sm">
                             <span class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-4 shrink-0">4</span>
                             <span>Comunicación Segura en Equipos (Riseup pad).</span>
                         </li>
-                        <li class="p-4 bg-blue-50 rounded-xl flex items-center">
+                        <li class="p-4 bg-blue-50 rounded-xl flex items-center shadow-sm">
                             <span class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-4 shrink-0">5</span>
                             <span>Cultura de la Autonomía y Soberanía Digital.</span>
                         </li>
                     </ul>
                 </div>
 
-                <!-- Contenido Parcial 2 -->
                 <div id="content2" class="p-8 hidden">
                     <h3 class="text-2xl font-bold text-purple-900 mb-2">¡Investiga de verdad!</h3>
                     <p class="text-purple-600 mb-6 font-semibold"><i class="far fa-calendar-alt mr-2"></i>Evaluación: 14 de mayo</p>
                     <ul class="space-y-4">
-                        <li class="p-4 bg-purple-50 rounded-xl flex items-start">
+                        <li class="p-4 bg-purple-50 rounded-xl flex items-start shadow-sm">
                             <span class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-4 flex-shrink-0">6</span>
                             <div>
                                 <strong class="block">Técnicas de Investigación Digital:</strong>
                                 <span class="text-sm">Ciberetnografía, análisis de contenido y grupos focales digitales.</span>
                             </div>
                         </li>
-                        <li class="p-4 bg-purple-50 rounded-xl flex items-start">
+                        <li class="p-4 bg-purple-50 rounded-xl flex items-start shadow-sm">
                             <span class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-4 flex-shrink-0">7</span>
                             <div>
                                 <strong class="block">Gestión Ética de la Información:</strong>
                                 <span class="text-sm">Licencias Permisivas (LibreOffice), Creative Commons y Propiedad Intelectual.</span>
                             </div>
                         </li>
-                        <li class="p-4 bg-purple-50 rounded-xl flex items-center">
+                        <li class="p-4 bg-purple-50 rounded-xl flex items-center shadow-sm">
                             <span class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-4 shrink-0">8</span>
                             <span>Organización y sistematización de la información.</span>
                         </li>
                     </ul>
                 </div>
 
-                <!-- Contenido Parcial 3 -->
                 <div id="content3" class="p-8 hidden">
                     <h3 class="text-2xl font-bold text-green-900 mb-2">¡Analiza y publica!</h3>
                     <p class="text-green-600 mb-6 font-semibold"><i class="far fa-calendar-alt mr-2"></i>Evaluación: 18 de junio</p>
                     <ul class="space-y-4">
-                        <li class="p-4 bg-green-50 rounded-xl flex items-center">
+                        <li class="p-4 bg-green-50 rounded-xl flex items-center shadow-sm">
                             <span class="bg-green-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-4 shrink-0">9</span>
                             <span>Software Estadístico de Libre Acceso (Jamovi / JASP).</span>
                         </li>
-                        <li class="p-4 bg-green-50 rounded-xl flex items-center">
+                        <li class="p-4 bg-green-50 rounded-xl flex items-center shadow-sm">
                             <span class="bg-green-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-4 shrink-0">10</span>
                             <span>Procesamiento de Datos: Tendencia central y dispersión.</span>
                         </li>
-                        <li class="p-4 bg-green-50 rounded-xl flex items-center">
+                        <li class="p-4 bg-green-50 rounded-xl flex items-center shadow-sm">
                             <span class="bg-green-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-4 shrink-0">11</span>
                             <span>Visualización Crítica: Gráficos e histogramas.</span>
                         </li>
-                        <li class="p-4 bg-green-50 rounded-xl flex items-center">
+                        <li class="p-4 bg-green-50 rounded-xl flex items-center shadow-sm">
                             <span class="bg-green-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-4 shrink-0">12</span>
                             <span>Difusión Web: Diseño en Wordpress / Blogspot.</span>
                         </li>
                     </ul>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- Actividad Diagnóstica -->
+    <section id="diagnostico" class="py-16 bg-blue-50">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">Actividad Diagnóstica 📝</h2>
+                <p class="text-gray-600">Recordemos un poco de lo aprendido en Cultura Digital I</p>
+            </div>
+            
+            <div class="bg-white rounded-3xl shadow-lg p-8 md:p-12 border border-blue-100">
+                <p class="mb-8 text-gray-700 leading-relaxed">
+                    Antes de comenzar con los temas de este semestre, analicemos qué tanto recordamos de los conceptos fundamentales. Responde estas preguntas en tu mente o libreta:
+                </p>
+                
+                <div class="space-y-6">
+                    <div class="p-5 border-l-4 border-blue-500 bg-gray-50 rounded-r-2xl card-hover">
+                        <h4 class="font-bold text-blue-900 mb-1 flex items-center">
+                            <i class="fas fa-shield-alt mr-2 text-blue-500"></i> Ciudadanía Digital
+                        </h4>
+                        <p class="text-sm text-gray-600 italic">¿Qué medidas tomas para proteger tus datos personales y tu privacidad cuando navegas en redes sociales o sitios web?</p>
+                    </div>
+
+                    <div class="p-5 border-l-4 border-indigo-500 bg-gray-50 rounded-r-2xl card-hover">
+                        <h4 class="font-bold text-indigo-900 mb-1 flex items-center">
+                            <i class="fas fa-laptop mr-2 text-indigo-500"></i> Software y Hardware
+                        </h4>
+                        <p class="text-sm text-gray-600 italic">¿Sabes identificar la diferencia entre el Sistema Operativo (como Windows o Android) y una Aplicación (como WhatsApp o Excel)?</p>
+                    </div>
+
+                    <div class="p-5 border-l-4 border-green-500 bg-gray-50 rounded-r-2xl card-hover">
+                        <h4 class="font-bold text-green-900 mb-1 flex items-center">
+                            <i class="fas fa-search mr-2 text-green-500"></i> Búsqueda de Información
+                        </h4>
+                        <p class="text-sm text-gray-600 italic">¿Qué criterios utilizas para saber si una noticia o información que encuentras en internet es verdadera o falsa?</p>
+                    </div>
+
+                    <div class="p-5 border-l-4 border-orange-500 bg-gray-50 rounded-r-2xl card-hover">
+                        <h4 class="font-bold text-orange-900 mb-1 flex items-center">
+                            <i class="fas fa-file-alt mr-2 text-orange-500"></i> Herramientas de Oficina
+                        </h4>
+                        <p class="text-sm text-gray-600 italic">¿Has utilizado procesadores de texto o hojas de cálculo para organizar tus tareas escolares? ¿Cuáles conoces?</p>
+                    </div>
+                </div>
+
+                <div class="mt-10 p-6 bg-blue-600 text-white rounded-2xl text-center">
+                    <p class="text-sm font-medium">Estas respuestas nos servirán de base para los nuevos retos de <strong>Cultura Digital II</strong>. ¡El éxito depende de tu curiosidad!</p>
+                </div>
             </div>
         </div>
     </section>
@@ -268,8 +400,8 @@
     </footer>
 
     <script>
+        // Función para cambiar los parciales en el temario
         function changePartial(num) {
-            // Ocultar todos los contenidos
             for(let i=1; i<=3; i++) {
                 const content = document.getElementById('content'+i);
                 if(content) content.classList.add('hidden');
@@ -280,7 +412,6 @@
                     btn.classList.add('text-gray-500', 'hover:bg-gray-300');
                 }
             }
-            // Mostrar el seleccionado
             const activeContent = document.getElementById('content'+num);
             if(activeContent) activeContent.classList.remove('hidden');
             
@@ -291,8 +422,27 @@
             }
         }
 
+        // Función para mostrar los grupos de Classroom
+        function showGroup(groupId) {
+            // Ocultar todas las tarjetas de grupo
+            document.getElementById('groupCardD').classList.add('hidden');
+            document.getElementById('groupCardE').classList.add('hidden');
+            
+            // Quitar estilos activos de los botones
+            document.getElementById('btnGroupD').classList.remove('group-btn-active');
+            document.getElementById('btnGroupE').classList.remove('group-btn-active');
+
+            // Mostrar la tarjeta seleccionada
+            document.getElementById('groupCard' + groupId).classList.remove('hidden');
+            
+            // Marcar botón como activo
+            document.getElementById('btnGroup' + groupId).classList.add('group-btn-active');
+        }
+
         window.onload = function() {
             changePartial(1);
+            // Iniciar sin ningún grupo seleccionado o con uno por defecto si prefieres
+            // showGroup('D'); 
         };
     </script>
 </body>
