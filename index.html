@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultura Digital II - Ing. Cruz Enrique Garcia Ramos</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Iconos FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+        .tab-active {
+            background-color: white;
+            color: #1d4ed8;
+            font-weight: 700;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navegación -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-laptop-code text-blue-600 text-2xl"></i>
+                    <span class="font-bold text-xl tracking-tight text-blue-900 uppercase italic">Cultura Digital II</span>
+                </div>
+                <div class="hidden md:flex space-x-8 font-medium">
+                    <a href="#inicio" class="hover:text-blue-600">Inicio</a>
+                    <a href="#evaluacion" class="hover:text-blue-600">Evaluación</a>
+                    <a href="#contexto" class="hover:text-blue-600">Contexto</a>
+                    <a href="#vida-real" class="hover:text-blue-600">Vida Real</a>
+                    <a href="#temario" class="hover:text-blue-600">Temario</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Bienvenida Divertida -->
+    <header id="inicio" class="gradient-bg text-white py-16 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <span class="bg-yellow-400 text-blue-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4 inline-block">¡Hola! Bienvenidos 👋</span>
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">
+                    Hacer internet un <br>mejor lugar para todos
+                </h1>
+                <p class="text-xl md:text-2xl text-yellow-300 font-bold mb-6">
+                    Docente: Ing. Cruz Enrique Garcia Ramos
+                </p>
+                <p class="text-lg opacity-90 mb-8 leading-relaxed max-w-lg">
+                    En esta materia no solo usamos la computadora, aprendemos a trabajar en equipo, a investigar de verdad y a crear cosas que ayuden a nuestra comunidad.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#temario" class="bg-white text-blue-700 px-8 py-3 rounded-full font-bold shadow-lg hover:bg-gray-100 transition inline-block">
+                        ¡Empecemos!
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop" 
+                     alt="Estudiantes colaborando" 
+                     class="rounded-3xl shadow-2xl w-full max-w-md border-4 border-white/20 object-cover h-80">
+            </div>
+        </div>
+    </header>
+
+    <!-- Evaluación Simple -->
+    <section id="evaluacion" class="py-16 max-w-7xl mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-2">¿Cómo vamos a calificar?</h2>
+            <p class="text-gray-600">Así de fácil se divide tu nota cada parcial:</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center space-x-4 card-hover">
+                <div class="text-3xl text-blue-600 bg-blue-50 p-4 rounded-full"><i class="fas fa-edit"></i></div>
+                <div>
+                    <h3 class="font-bold text-xl">40% Firmas</h3>
+                    <p class="text-gray-500 text-sm">Trabajos en clase y tareas.</p>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center space-x-4 card-hover">
+                <div class="text-3xl text-green-600 bg-green-50 p-4 rounded-full"><i class="fas fa-users"></i></div>
+                <div>
+                    <h3 class="font-bold text-xl">50% Proyecto</h3>
+                    <p class="text-gray-500 text-sm">Nuestro producto final en equipo.</p>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center space-x-4 card-hover">
+                <div class="text-3xl text-orange-600 bg-orange-50 p-4 rounded-full"><i class="fas fa-star"></i></div>
+                <div>
+                    <h3 class="font-bold text-xl">10% Asistencia</h3>
+                    <p class="text-gray-500 text-sm">Estar presente y participar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contexto México y NEM -->
+    <section id="contexto" class="py-16 bg-blue-900 text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl font-bold mb-6 flex items-center">
+                        <i class="fas fa-globe-americas mr-3 text-blue-400"></i>
+                        México y la Tecnología 🇲🇽
+                    </h2>
+                    <div class="space-y-6 text-blue-100 leading-relaxed">
+                        <p>
+                            En la <strong>Nueva Escuela Mexicana</strong>, aprendemos que la tecnología debe servir para cerrar brechas. No se trata solo de redes sociales, sino de entender cómo mejorar nuestra comunidad.
+                        </p>
+                        <p>
+                            Bajo el <strong>Humanismo Mexicano</strong>, el Ing. Garcia Ramos promueve el uso de <strong>Software Libre</strong>. Programas gratuitos que respetan tu privacidad y que todos podemos compartir.
+                        </p>
+                        <div class="bg-blue-800/50 p-6 rounded-2xl border border-blue-700">
+                            <h4 class="font-bold text-white mb-3 tracking-wide uppercase text-sm text-yellow-400">Nuestros pilares:</h4>
+                            <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm font-semibold">
+                                <li class="flex items-center"><i class="fas fa-check-circle text-green-400 mr-2"></i> Soberanía Digital</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle text-green-400 mr-2"></i> Bienestar Común</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle text-green-400 mr-2"></i> Justicia Social</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle text-green-400 mr-2"></i> Ética ante la IA</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 grid grid-cols-2 gap-4">
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=400&auto=format&fit=crop" 
+                         alt="Tecnología educativa" class="rounded-2xl shadow-lg h-48 w-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=400&auto=format&fit=crop" 
+                         alt="Colaboración" class="rounded-2xl shadow-lg mt-8 h-48 w-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ejemplos en la Vida Real -->
+    <section id="vida-real" class="py-16 bg-blue-50">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-2">¿De qué me sirve esto en la vida real? 🌎</h2>
+            <p class="text-gray-600 mb-12">Aquí te damos ejemplos de cómo aplicarás lo que aprendas:</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-3xl shadow-lg border-b-8 border-blue-500 card-hover">
+                    <div class="mb-4 text-blue-500 text-4xl"><i class="fas fa-users-cog"></i></div>
+                    <h3 class="font-bold text-xl mb-4 text-blue-900">1. Organizar un evento</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        ¿Quieres organizar una kermés o un torneo? Usamos documentos compartidos (Cryptpad) donde todos escriben quién trae qué en tiempo real. ¡Cero confusión!
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl shadow-lg border-b-8 border-purple-500 card-hover">
+                    <div class="mb-4 text-purple-500 text-4xl"><i class="fas fa-search-location"></i></div>
+                    <h3 class="font-bold text-xl mb-4 text-purple-900">2. Investigar un problema</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        ¿Hay un problema en tu colonia? Usamos <em>Ciberetnografía</em>: entramos a redes sociales para observar qué dice la gente y entender el problema desde el celular.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl shadow-lg border-b-8 border-green-500 card-hover">
+                    <div class="mb-4 text-green-500 text-4xl"><i class="fas fa-chart-line"></i></div>
+                    <h3 class="font-bold text-xl mb-4 text-green-900">3. Ayudar a tu familia</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Comparas precios de tiendas, usas software estadístico para ver dónde es más barato y creas un <strong>Sitio Web o Blog</strong> para informar a tus vecinos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Temario Dinámico -->
+    <section id="temario" class="py-16 bg-white border-t border-gray-100">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-gray-900">Lo que vamos a ver este semestre 📚</h2>
+            </div>
+
+            <!-- Tabs -->
+            <div class="flex flex-wrap justify-center space-x-2 md:space-x-4 mb-8 bg-gray-200 p-1 rounded-2xl">
+                <button onclick="changePartial(1)" id="btn1" class="tab-active flex-1 py-3 px-4 rounded-xl transition text-sm font-bold uppercase">Parcial 1</button>
+                <button onclick="changePartial(2)" id="btn2" class="flex-1 py-3 px-4 rounded-xl transition text-sm font-bold uppercase text-gray-500 hover:bg-gray-300">Parcial 2</button>
+                <button onclick="changePartial(3)" id="btn3" class="flex-1 py-3 px-4 rounded-xl transition text-sm font-bold uppercase text-gray-500 hover:bg-gray-300">Parcial 3</button>
+            </div>
+
+            <!-- Contenidos -->
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden min-h-[450px]">
+                
+                <div id="content1" class="p-8">
+                    <h3 class="text-2xl font-bold text-blue-900 mb-2">¡A trabajar en equipo!</h3>
+                    <p class="text-blue-600 mb-6 font-medium"><i class="far fa-calendar-alt mr-2"></i>09 de febrero al 20 de marzo</p>
+                    <ul class="space-y-4">
+                        <li class="p-4 bg-blue-50 rounded-xl flex items-center shadow-sm">
+                            <span class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-4">1</span>
+                            <span>Fundamentos del Trabajo Colaborativo Digital.</span>
+                        </li>
+                        <li class="p-4 bg-blue-50 rounded-xl flex items-center shadow-sm">
+                            <span class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-4">2</span>
+                            <span>Ecosistema de las TICCAD de Libre Acceso.</span>
+                        </li>
+                        <li class="p-4 bg-blue-50 rounded-xl flex items-center shadow-sm">
+                            <span class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-4">3</span>
+                            <span>Plataformas de Edición Colectiva (Cryptpad).</span>
+                        </li>
+                        <li class="p-4 bg-blue-50 rounded-xl flex items-center shadow-sm">
+                            <span class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-4">4</span>
+                            <span>Comunicación Segura en Equipos (Riseup pad).</span>
+                        </li>
+                        <li class="p-4 bg-blue-50 rounded-xl flex items-center shadow-sm">
+                            <span class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-4">5</span>
+                            <span>Cultura de la Autonomía y Soberanía Digital.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="content2" class="p-8 hidden">
+                    <h3 class="text-2xl font-bold text-purple-900 mb-2">¡A investigar de verdad!</h3>
+                    <p class="text-purple-600 mb-6 font-medium"><i class="far fa-calendar-alt mr-2"></i>Evaluación: 14 de mayo</p>
+                    <ul class="space-y-4">
+                        <li class="p-4 bg-purple-50 rounded-xl flex items-start shadow-sm">
+                            <span class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-4 flex-shrink-0">6</span>
+                            <div>
+                                <strong class="block">Técnicas de Investigación Digital:</strong>
+                                <span class="text-sm">Ciberetnografía, análisis de contenido y grupos focales digitales.</span>
+                            </div>
+                        </li>
+                        <li class="p-4 bg-purple-50 rounded-xl flex items-start shadow-sm">
+                            <span class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-4 flex-shrink-0">7</span>
+                            <div>
+                                <strong class="block">Gestión Ética de la Información:</strong>
+                                <span class="text-sm">Licencias Permisivas (MIT, BSD, Apache) y Propiedad Intelectual.</span>
+                            </div>
+                        </li>
+                        <li class="p-4 bg-purple-50 rounded-xl flex items-center shadow-sm">
+                            <span class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-4">8</span>
+                            <span>Organización y sistematización de la información.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="content3" class="p-8 hidden">
+                    <h3 class="text-2xl font-bold text-green-900 mb-2">¡A contar y publicar!</h3>
+                    <p class="text-green-600 mb-6 font-medium"><i class="far fa-calendar-alt mr-2"></i>Evaluación: 18 de junio</p>
+                    <ul class="space-y-4">
+                        <li class="p-4 bg-green-50 rounded-xl flex items-center shadow-sm">
+                            <span class="bg-green-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-4">9</span>
+                            <span>Software Estadístico de Libre Acceso (Jamovi / JASP).</span>
+                        </li>
+                        <li class="p-4 bg-green-50 rounded-xl flex items-center shadow-sm">
+                            <span class="bg-green-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-4">10</span>
+                            <span>Procesamiento de Datos: Tendencia central y dispersión.</span>
+                        </li>
+                        <li class="p-4 bg-green-50 rounded-xl flex items-center shadow-sm">
+                            <span class="bg-green-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-4">11</span>
+                            <span>Visualización Crítica: Gráficos e histogramas.</span>
+                        </li>
+                        <li class="p-4 bg-green-50 rounded-xl flex items-center shadow-sm">
+                            <span class="bg-green-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-4">12</span>
+                            <span>Difusión Web: Diseño en Wordpress / Blogspot.</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Simple -->
+    <footer class="bg-gray-900 text-gray-500 py-12 px-4 text-center">
+        <p class="text-white font-bold text-lg mb-2 italic">Cultura Digital II</p>
+        <p class="text-sm mb-4">Ing. Cruz Enrique Garcia Ramos</p>
+        <div class="flex justify-center space-x-6 text-xl mb-6">
+            <i class="fab fa-creative-commons"></i>
+            <i class="fab fa-linux"></i>
+            <i class="fas fa-graduation-cap"></i>
+        </div>
+        <p class="text-xs uppercase tracking-widest">"Aprender, colaborar y transformar nuestro México"</p>
+    </footer>
+
+    <script>
+        function changePartial(num) {
+            for(let i=1; i<=3; i++) {
+                document.getElementById('content'+i).classList.add('hidden');
+                document.getElementById('btn'+i).classList.remove('tab-active');
+                document.getElementById('btn'+i).classList.add('text-gray-500', 'hover:bg-gray-300');
+            }
+            document.getElementById('content'+num).classList.remove('hidden');
+            const activeBtn = document.getElementById('btn'+num);
+            activeBtn.classList.add('tab-active');
+            activeBtn.classList.remove('text-gray-500', 'hover:bg-gray-300');
+        }
+        window.onload = function() { changePartial(1); };
+    </script>
+</body>
+</html>
