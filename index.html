@@ -31,7 +31,7 @@
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <!-- Navegación Modificada -->
+    <!-- Navegación Modificada con Enlaces a Páginas Futuras -->
     <nav class="bg-white shadow-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
@@ -40,11 +40,10 @@
                     <span class="font-bold text-xl tracking-tight text-blue-900 uppercase italic">Cultura Digital II</span>
                 </div>
                 <div class="hidden md:flex space-x-8 font-bold">
-                    <a href="#inicio" class="text-blue-600 hover:text-blue-800 transition">Inicio</a>
-                    <!-- Los enlaces de parciales activan el tab correspondiente y hacen scroll -->
-                    <a href="#temario" onclick="changePartial(1)" class="text-gray-500 hover:text-blue-600 transition">Parcial 1</a>
-                    <a href="#temario" onclick="changePartial(2)" class="text-gray-500 hover:text-blue-600 transition">Parcial 2</a>
-                    <a href="#temario" onclick="changePartial(3)" class="text-gray-500 hover:text-blue-600 transition">Parcial 3</a>
+                    <a href="index.html" class="text-blue-600 hover:text-blue-800 transition">Inicio</a>
+                    <a href="parcial1.html" class="text-gray-500 hover:text-blue-600 transition">Parcial 1</a>
+                    <a href="parcial2.html" class="text-gray-500 hover:text-blue-600 transition">Parcial 2</a>
+                    <a href="parcial3.html" class="text-gray-500 hover:text-blue-600 transition">Parcial 3</a>
                 </div>
             </div>
         </div>
@@ -162,11 +161,11 @@
         </div>
     </section>
 
-    <!-- Temario Dinámico (Todo en uno) -->
+    <!-- Temario Dinámico (Todo en uno para Referencia) -->
     <section id="temario" class="py-16 bg-white border-t border-gray-100 scroll-mt-20">
         <div class="max-w-4xl mx-auto px-4">
             <div class="text-center mb-10">
-                <h2 class="text-3xl font-bold text-gray-900">Nuestro Camino Semestral 📚</h2>
+                <h2 class="text-3xl font-bold text-gray-900">Resumen del Semestre 📚</h2>
             </div>
 
             <!-- Tabs de Parciales -->
@@ -272,18 +271,26 @@
         function changePartial(num) {
             // Ocultar todos los contenidos
             for(let i=1; i<=3; i++) {
-                document.getElementById('content'+i).classList.add('hidden');
-                document.getElementById('btn'+i).classList.remove('tab-active');
-                document.getElementById('btn'+i).classList.add('text-gray-500', 'hover:bg-gray-300');
+                const content = document.getElementById('content'+i);
+                if(content) content.classList.add('hidden');
+                
+                const btn = document.getElementById('btn'+i);
+                if(btn) {
+                    btn.classList.remove('tab-active');
+                    btn.classList.add('text-gray-500', 'hover:bg-gray-300');
+                }
             }
             // Mostrar el seleccionado
-            document.getElementById('content'+num).classList.remove('hidden');
+            const activeContent = document.getElementById('content'+num);
+            if(activeContent) activeContent.classList.remove('hidden');
+            
             const activeBtn = document.getElementById('btn'+num);
-            activeBtn.classList.add('tab-active');
-            activeBtn.classList.remove('text-gray-500', 'hover:bg-gray-300');
+            if(activeBtn) {
+                activeBtn.classList.add('tab-active');
+                activeBtn.classList.remove('text-gray-500', 'hover:bg-gray-300');
+            }
         }
 
-        // Al cargar la página, aseguramos que se vea el Parcial 1
         window.onload = function() {
             changePartial(1);
         };
