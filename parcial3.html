@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcial 3 - Cultura Digital II</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Iconos FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .gradient-emerald {
+            background: linear-gradient(135deg, #064e3b 0%, #10b981 100%);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Navegación -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-laptop-code text-emerald-600 text-2xl"></i>
+                    <span class="font-bold text-xl tracking-tight text-emerald-900 uppercase italic">Cultura Digital II</span>
+                </div>
+                <div class="hidden md:flex space-x-8 font-bold">
+                    <a href="index.html" class="text-gray-500 hover:text-emerald-600 transition">Inicio</a>
+                    <a href="parcial1.html" class="text-gray-500 hover:text-emerald-600 transition">Parcial 1</a>
+                    <a href="parcial2.html" class="text-gray-500 hover:text-emerald-600 transition">Parcial 2</a>
+                    <a href="parcial3.html" class="text-emerald-600 border-b-2 border-emerald-600">Parcial 3</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Encabezado -->
+    <header class="gradient-emerald text-white py-12 px-4 shadow-lg text-center">
+        <div class="max-w-7xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-black mb-2 uppercase tracking-tighter italic">Parcial 3: Datos y Difusión</h1>
+            <p class="text-xl text-emerald-100 font-medium mb-4">Ing. Cruz Enrique Garcia Ramos</p>
+            <div class="inline-block bg-white/20 backdrop-blur-md px-6 py-2 rounded-full border border-white/30 text-xs font-bold uppercase tracking-widest">
+                Ciencia de Datos y Web Social - Ruta de 4 Semanas
+            </div>
+        </div>
+    </header>
+
+    <!-- CALENDARIO DE RUTA -->
+    <section class="max-w-7xl mx-auto py-12 px-4">
+        <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-100">
+            <h2 class="text-2xl font-bold text-center mb-10 text-slate-900 uppercase italic tracking-tighter">Plan de Cierre Semestral</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="p-6 border-t-4 border-emerald-500 bg-emerald-50 rounded-b-xl card-hover">
+                    <span class="text-xs font-bold text-emerald-600 uppercase">Semana 1</span>
+                    <h4 class="font-bold mt-2">Mundo de Datos</h4>
+                    <p class="text-xs text-slate-500 mt-2">Introducción al software libre Jamovi y carga de datos reales.</p>
+                </div>
+                <div class="p-6 border-t-4 border-teal-500 bg-teal-50 rounded-b-xl card-hover">
+                    <span class="text-xs font-bold text-teal-600 uppercase">Semana 2</span>
+                    <h4 class="font-bold mt-2">Análisis Crítico</h4>
+                    <p class="text-xs text-slate-500 mt-2">Cálculo de tendencias y dispersión para entender problemas.</p>
+                </div>
+                <div class="p-6 border-t-4 border-green-500 bg-teal-50 rounded-b-xl card-hover">
+                    <span class="text-xs font-bold text-green-600 uppercase">Semana 3</span>
+                    <h4 class="font-bold mt-2">Visualización</h4>
+                    <p class="text-xs text-slate-500 mt-2">Gráficos e histogramas que cuentan historias sociales.</p>
+                </div>
+                <div class="p-6 border-t-4 border-yellow-500 bg-teal-50 rounded-b-xl card-hover">
+                    <span class="text-xs font-bold text-yellow-600 uppercase">Semana 4</span>
+                    <h4 class="font-bold mt-2">Voz en la Web</h4>
+                    <p class="text-xs text-slate-500 mt-2">Creación de un Blog escolar para difundir hallazgos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido Principal -->
+    <main class="max-w-5xl mx-auto py-8 px-4 space-y-16">
+
+        <!-- TEMAS 9 Y 10: SEMANA 1 Y 2 (SOFTWARE Y PROCESAMIENTO) -->
+        <section id="semana1-2" class="bg-white rounded-[2.5rem] shadow-xl overflow-hidden border border-emerald-100">
+            <div class="p-8 md:p-12">
+                <div class="flex items-center space-x-4 mb-8">
+                    <span class="bg-emerald-600 text-white w-12 h-12 rounded-2xl flex items-center justify-center text-xl font-bold shadow-lg">9-10</span>
+                    <h2 class="text-3xl font-black text-slate-900 uppercase">Semana 1-2: El Poder de la Estadística Libre</h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div class="space-y-6">
+                        <h4 class="text-emerald-600 font-bold uppercase tracking-widest text-sm">Contexto Teórico</h4>
+                        <p class="text-slate-600 leading-relaxed italic border-l-4 border-emerald-200 pl-4">
+                            "Los datos por sí solos son ruido. La estadística es el lenguaje que nos permite escuchar lo que la realidad mexicana nos intenta decir sobre la economía o el medio ambiente."
+                        </p>
+                        <div class="p-4 bg-emerald-50 rounded-2xl">
+                            <p class="text-sm text-slate-700"><strong>Dato curioso:</strong> El software <strong>Jamovi</strong> es una alternativa gratuita y potente a programas costosos. Permite hacer ciencia sin barreras económicas.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 text-white p-8 rounded-3xl">
+                        <h4 class="text-yellow-400 font-bold mb-6 uppercase italic tracking-wider flex items-center">
+                            <i class="fas fa-microchip mr-2"></i> Laboratorio de Datos
+                        </h4>
+                        <div class="space-y-6">
+                            <div class="bg-slate-800 p-4 rounded-xl border border-slate-700">
+                                <p class="text-xs font-bold text-emerald-400 uppercase mb-2">Reto 1: La Canasta Básica</p>
+                                <p class="text-[11px] leading-relaxed text-slate-300">Investiguen el precio de 5 productos básicos en 3 tienditas. Registren los datos en Jamovi y calculen el <strong>Promedio</strong>. ¿Dónde rinde más el dinero?</p>
+                            </div>
+                            <div class="bg-slate-800 p-4 rounded-xl border border-slate-700">
+                                <p class="text-xs font-bold text-emerald-400 uppercase mb-2">Reto 2: El Tiempo en Pantalla</p>
+                                <p class="text-[11px] leading-relaxed text-slate-300">Usando los datos del Parcial 1, calculen la <strong>Media y la Mediana</strong> del uso del móvil. ¿Quiénes están por encima del promedio?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- IMAGEN CORREGIDA DE ANÁLISIS DE DATOS -->
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop" alt="[Análisis de Datos y Estadísticas]" class="w-full h-64 object-cover opacity-80">
+        </section>
+
+        <!-- TEMA 11: SEMANA 3 (VISUALIZACIÓN CRÍTICA) -->
+        <section id="semana3" class="bg-white rounded-[2.5rem] shadow-xl overflow-hidden border border-teal-100">
+            <div class="p-8 md:p-12">
+                <div class="flex items-center space-x-4 mb-8">
+                    <span class="bg-teal-600 text-white w-12 h-12 rounded-2xl flex items-center justify-center text-xl font-bold shadow-lg">11</span>
+                    <h2 class="text-3xl font-black text-slate-900 uppercase">Semana 3: Visualización que Impacta</h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div class="space-y-6">
+                        <h4 class="text-teal-600 font-bold uppercase tracking-widest text-sm">Contexto Teórico</h4>
+                        <p class="text-slate-600 leading-relaxed italic border-l-4 border-teal-200 pl-4">
+                            "Una gráfica bien hecha vale más que mil tablas de números. Aprenderemos a crear histogramas y diagramas de barras que no mientan y que ayuden a la comunidad a entender sus problemas."
+                        </p>
+                        <div class="p-4 bg-teal-50 border border-teal-100 rounded-2xl text-xs text-teal-800">
+                            <strong>Consejo del Ing. Garcia Ramos:</strong> No satures tus gráficas de colores. El dato debe ser el protagonista.
+                        </div>
+                    </div>
+
+                    <div class="bg-teal-900 text-white p-8 rounded-3xl">
+                        <h4 class="text-yellow-400 font-bold mb-6 uppercase italic tracking-wider flex items-center">
+                            <i class="fas fa-chart-bar mr-2"></i> Taller de Infografía
+                        </h4>
+                        <div class="space-y-6">
+                            <div class="bg-teal-800 p-4 rounded-xl border border-teal-700">
+                                <p class="text-xs font-bold text-teal-400 uppercase mb-2">Reto 3: El Mapa del Agua</p>
+                                <p class="text-[11px] text-slate-300">Usen datos del INEGI sobre el agua en su estado. Generen un <strong>Histograma</strong>. ¿Qué nos dice la forma de la curva sobre la escasez?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=1000&auto=format&fit=crop" alt="[Visualización de Gráficos]" class="w-full h-56 object-cover opacity-80">
+        </section>
+
+        <!-- TEMA 12: SEMANA 4 (DIFUSIÓN WEB + GUÍA PASO A PASO) -->
+        <section id="semana4" class="bg-white rounded-[2.5rem] shadow-xl overflow-hidden border border-yellow-100">
+            <div class="p-8 md:p-12">
+                <div class="flex items-center space-x-4 mb-8">
+                    <span class="bg-yellow-500 text-white w-12 h-12 rounded-2xl flex items-center justify-center text-xl font-bold shadow-lg">12</span>
+                    <h2 class="text-3xl font-black text-slate-900 uppercase">Semana 4: Mi Blog Comunitario</h2>
+                </div>
+
+                <!-- GUÍA PASO A PASO WORDPRESS -->
+                <div class="bg-slate-50 p-6 md:p-10 rounded-[2rem] border border-slate-200 mb-10 shadow-inner">
+                    <h4 class="text-blue-900 font-bold uppercase tracking-widest text-sm mb-6 flex items-center">
+                        <i class="fab fa-wordpress mr-2 text-xl text-blue-600"></i> Guía Paso a Paso para tu Página Web
+                    </h4>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-blue-600 text-white w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center text-[10px] font-bold mt-1 mr-4">1</div>
+                                <div>
+                                    <p class="font-bold text-sm text-slate-800">Registro:</p>
+                                    <p class="text-xs text-slate-600">Entra a <strong>wordpress.com</strong> y crea una cuenta con tu correo escolar. Elige siempre el plan "Gratis".</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-blue-600 text-white w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center text-[10px] font-bold mt-1 mr-4">2</div>
+                                <div>
+                                    <p class="font-bold text-sm text-slate-800">Nombre del Dominio:</p>
+                                    <p class="text-xs text-slate-600">Elige una dirección profesional, ejemplo: <em>investigacion-digital-mexico.wordpress.com</em>.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-blue-600 text-white w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center text-[10px] font-bold mt-1 mr-4">3</div>
+                                <div>
+                                    <p class="font-bold text-sm text-slate-800">Diseño y Tema:</p>
+                                    <p class="text-xs text-slate-600">Selecciona un tema tipo "Blog". Debe ser limpio, con fondo claro para facilitar la lectura.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-blue-600 text-white w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center text-[10px] font-bold mt-1 mr-4">4</div>
+                                <div>
+                                    <p class="font-bold text-sm text-slate-800">Primera Entrada (Post):</p>
+                                    <p class="text-xs text-slate-600">Redacta el título de tu investigación. Pega tu texto del Parcial 2 e inserta tus gráficas del Parcial 3.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-blue-600 text-white w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center text-[10px] font-bold mt-1 mr-4">5</div>
+                                <div>
+                                    <p class="font-bold text-sm text-slate-800">Ética y Licencias:</p>
+                                    <p class="text-xs text-slate-600">Al final del post, agrega una sección de "Fuentes" con los créditos Creative Commons.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-blue-600 text-white w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center text-[10px] font-bold mt-1 mr-4">6</div>
+                                <div>
+                                    <p class="font-bold text-sm text-slate-800">Publicar:</p>
+                                    <p class="text-xs text-slate-600">Haz clic en "Lanzar sitio". Copia el enlace URL final para entregarlo en tu Google Classroom.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 text-white p-8 rounded-3xl relative">
+                    <div class="absolute -top-4 -aight-4 bg-yellow-400 text-blue-900 font-black px-4 py-1 rounded-lg transform rotate-12 shadow-md italic uppercase text-[10px]">Proyecto Final Integral</div>
+                    <h4 class="text-yellow-400 font-bold mb-6 uppercase italic tracking-wider flex items-center">
+                        <i class="fas fa-globe-americas mr-2 text-xl"></i> Difusión Escolar
+                    </h4>
+                    <div class="space-y-4 text-[11px] leading-relaxed">
+                        <p class="flex items-start"><i class="fas fa-check text-green-400 mt-1 mr-3"></i> <strong>Contenido:</strong> Tu blog debe ser una respuesta a la problemática investigada.</p>
+                        <p class="flex items-start"><i class="fas fa-check text-green-400 mt-1 mr-3"></i> <strong>Visual:</strong> Debe incluir al menos 2 gráficas claras generadas en Jamovi.</p>
+                        <p class="flex items-start"><i class="fas fa-check text-green-400 mt-1 mr-3"></i> <strong>Conclusión:</strong> ¿Qué sugieres para mejorar el problema basado en tus datos?</p>
+                    </div>
+                </div>
+            </div>
+            <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1000&auto=format&fit=crop" alt="[Diseño de Blog y Comunicación]" class="w-full h-56 object-cover opacity-60">
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-500 py-16 px-4 text-center mt-20">
+        <div class="max-w-7xl mx-auto border-t border-slate-800 pt-10">
+            <p class="text-white font-bold text-lg mb-2 italic uppercase tracking-widest">Cultura Digital II</p>
+            <p class="text-sm mb-4">Ing. Cruz Enrique Garcia Ramos</p>
+            <a href="index.html" class="bg-white/10 text-white px-8 py-3 rounded-full hover:bg-white/20 transition text-xs font-bold uppercase tracking-widest inline-flex items-center">
+                <i class="fas fa-arrow-left mr-3"></i> Regresar al Portal Principal
+            </a>
+            <p class="text-[10px] mt-10 opacity-30 uppercase tracking-tighter">Ciencia de Datos y Justicia Social - Modelo 2025</p>
+        </div>
+    </footer>
+
+</body>
+</html>
