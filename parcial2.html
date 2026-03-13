@@ -3,261 +3,409 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parcial 2 - Cultura Digital II</title>
+    <title>Parcial II - CBTis 134 - Ing. Garcia Ramos</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Iconos FontAwesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;700&display=swap');
+        
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        .gradient-purple {
-            background: linear-gradient(135deg, #4c1d95 0%, #8b5cf6 100%);
+        .font-mono { font-family: 'Fira Code', monospace; }
+        
+        .gradient-header {
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
         }
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+        
+        .week-tab {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .step-circle {
-            width: 40px;
-            height: 40px;
-            background: #8b5cf6;
-            color: white;
-            border-radius: 50%;
+        
+        .week-tab.active {
+            background-color: white;
+            color: #4338ca !important;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            font-weight: 800;
+        }
+
+        .code-container {
+            background-color: #0d1117;
+            position: relative;
+            border: 1px solid #30363d;
+        }
+
+        .code-container::before {
+            content: "SHELL INTERACTIVO / AGGREGATION";
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: #8b949e;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .concept-badge {
+            background: rgba(79, 70, 229, 0.1);
+            color: #4338ca;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            border: 1px solid rgba(79, 70, 229, 0.2);
+        }
+
+        .animate-content {
+            animation: slideUp 0.4s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .theory-card strong { color: #4338ca; font-weight: 700; }
+        .example-box { border-left: 4px solid #6366f1; background-color: #f5f3ff; padding: 1.5rem; border-radius: 0.75rem; }
+        
+        /* Diagram styling */
+        .diagram-node {
+            background: white;
+            border: 2px solid #6366f1;
+            border-radius: 12px;
+            padding: 12px;
+            font-size: 0.75rem;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            min-width: 100px;
+        }
+        .diagram-arrow {
+            color: #6366f1;
+            font-size: 1.2rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
-            margin-bottom: 1rem;
+        }
+
+        .step-pill {
+            background: #4338ca;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            margin-right: 8px;
+        }
+
+        .nested-exercise {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            padding: 1rem;
+            border-radius: 1rem;
+            margin-top: 1rem;
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800">
+<body class="bg-slate-50 text-slate-900 overflow-x-hidden">
 
     <!-- Navegación -->
-    <nav class="bg-white shadow-md sticky top-0 z-50">
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
-                <div class="flex items-center space-x-2">
-                    <i class="fas fa-laptop-code text-purple-600 text-2xl"></i>
-                    <span class="font-bold text-xl tracking-tight text-purple-900 uppercase italic">Cultura Digital II</span>
-                </div>
-                <div class="hidden md:flex space-x-8 font-bold">
-                    <a href="index.html" class="text-gray-500 hover:text-purple-600 transition">Inicio</a>
-                    <a href="parcial1.html" class="text-gray-500 hover:text-purple-600 transition">Parcial 1</a>
-                    <a href="parcial2.html" class="text-purple-600 border-b-2 border-purple-600">Parcial 2</a>
-                    <a href="parcial3.html" class="text-gray-500 hover:text-purple-600 transition">Parcial 3</a>
+                <a href="index.html" class="flex items-center space-x-2 text-indigo-600 hover:text-indigo-800 transition group">
+                    <i class="fas fa-home"></i>
+                    <span class="font-bold uppercase tracking-tighter text-sm">CBTis 134 • Inicio</span>
+                </a>
+                <div class="flex items-center space-x-6 text-xs font-bold uppercase tracking-widest text-slate-400">
+                    <a href="parcial1.html" class="hover:text-indigo-600 transition">Parcial I</a>
+                    <span class="text-indigo-600 border-b-2 border-indigo-600 pb-1">Parcial II</span>
+                    <span class="opacity-30">Parcial III</span>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Encabezado -->
-    <header class="gradient-purple text-white py-12 px-4 shadow-lg">
-        <div class="max-w-7xl mx-auto text-center">
-            <h1 class="text-4xl md:text-5xl font-black mb-2 uppercase tracking-tighter italic">Parcial 2: El Investigador Digital</h1>
-            <p class="text-xl text-purple-100 font-medium mb-4">Ing. Cruz Enrique Garcia Ramos</p>
-            <div class="inline-block bg-white/20 backdrop-blur-md px-6 py-2 rounded-full border border-white/30 text-xs font-bold uppercase tracking-widest">
-                Plan de 4 Semanas de Trabajo
-            </div>
+    <!-- Header Lección -->
+    <header class="gradient-header text-white py-16 px-4 text-center relative overflow-hidden">
+        <div class="max-w-4xl mx-auto relative z-10">
+            <h1 class="text-3xl md:text-5xl font-black mb-4 tracking-tight uppercase italic">Parcial II: Big Data & Analytics</h1>
+            <p class="text-indigo-100 text-lg opacity-95 max-w-2xl mx-auto italic leading-snug">
+                Dominando el Pipeline de Agregación: <span class="text-white font-bold underline">Análisis masivo, Uniones e Índices de Alto Rendimiento</span>.
+            </p>
+        </div>
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+            <i class="fas fa-layer-group text-[25rem] absolute -bottom-20 -right-20"></i>
         </div>
     </header>
 
-    <!-- CALENDARIO DE RUTA (NUEVO) -->
-    <section class="max-w-7xl mx-auto py-12 px-4">
-        <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-100">
-            <h2 class="text-2xl font-bold text-center mb-10 text-slate-900 uppercase italic tracking-tighter">Hoja de Ruta del Parcial</h2>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div class="p-6 border-t-4 border-purple-500 bg-slate-50 rounded-b-xl">
-                    <span class="text-xs font-bold text-purple-600 uppercase">Semana 1</span>
-                    <h4 class="font-bold mt-2">Observación Digital</h4>
-                    <p class="text-xs text-slate-500 mt-2">Aprendemos a escuchar qué dice la red sobre nuestra comunidad.</p>
-                </div>
-                <div class="p-6 border-t-4 border-indigo-500 bg-slate-50 rounded-b-xl">
-                    <span class="text-xs font-bold text-indigo-600 uppercase">Semana 2</span>
-                    <h4 class="font-bold mt-2">Ética y Legalidad</h4>
-                    <p class="text-xs text-slate-500 mt-2">Protegemos nuestra integridad y respetamos autores.</p>
-                </div>
-                <div class="p-6 border-t-4 border-emerald-500 bg-slate-50 rounded-b-xl">
-                    <span class="text-xs font-bold text-emerald-600 uppercase">Semana 3</span>
-                    <h4 class="font-bold mt-2">Sistematización</h4>
-                    <p class="text-xs text-slate-500 mt-2">Convertimos comentarios sueltos en datos útiles.</p>
-                </div>
-                <div class="p-6 border-t-4 border-yellow-500 bg-slate-50 rounded-b-xl">
-                    <span class="text-xs font-bold text-yellow-600 uppercase">Semana 4</span>
-                    <h4 class="font-bold mt-2">Reporte Crítico</h4>
-                    <p class="text-xs text-slate-500 mt-2">Creamos una conclusión basada en evidencias.</p>
-                </div>
-            </div>
+    <!-- Navegación Semanal -->
+    <section class="max-w-7xl mx-auto px-4 -mt-10 relative z-20">
+        <div class="bg-slate-200/60 backdrop-blur-xl p-1.5 rounded-2xl shadow-xl flex flex-wrap justify-center gap-1.5 border border-white/30">
+            <button onclick="switchWeek(6)" id="tab6" class="week-tab active flex-1 min-w-[110px] py-4 rounded-xl font-bold text-xs uppercase flex flex-col items-center">
+                <span class="opacity-60 text-[9px] mb-1 italic">I. Pipeline</span>
+                <span>Semana 06</span>
+            </button>
+            <button onclick="switchWeek(7)" id="tab7" class="week-tab text-slate-600 flex-1 min-w-[110px] py-4 rounded-xl font-bold text-xs uppercase flex flex-col items-center hover:bg-white/50 transition">
+                <span class="opacity-60 text-[9px] mb-1 italic">II. Agregación</span>
+                <span>Semana 07</span>
+            </button>
+            <button onclick="switchWeek(8)" id="tab8" class="week-tab text-slate-600 flex-1 min-w-[110px] py-4 rounded-xl font-bold text-xs uppercase flex flex-col items-center hover:bg-white/50 transition">
+                <span class="opacity-60 text-[9px] mb-1 italic">III. Uniones</span>
+                <span>Semana 08</span>
+            </button>
+            <button onclick="switchWeek(9)" id="tab9" class="week-tab text-slate-600 flex-1 min-w-[110px] py-4 rounded-xl font-bold text-xs uppercase flex flex-col items-center hover:bg-white/50 transition">
+                <span class="opacity-60 text-[9px] mb-1 italic">IV. Índices</span>
+                <span>Semana 09</span>
+            </button>
+            <button onclick="switchWeek(10)" id="tab10" class="week-tab text-slate-600 flex-1 min-w-[110px] py-4 rounded-xl font-bold text-xs uppercase flex flex-col items-center hover:bg-white/50 transition">
+                <span class="opacity-60 text-[9px] mb-1 italic">V. Performance</span>
+                <span>Semana 10</span>
+            </button>
         </div>
     </section>
 
-    <!-- Contenido Principal -->
-    <main class="max-w-5xl mx-auto py-8 px-4 space-y-16">
-
-        <!-- TEMA 6: SEMANA 1 -->
-        <section id="tema6" class="bg-white rounded-[2.5rem] shadow-xl overflow-hidden border border-purple-100 card-hover">
-            <div class="p-8 md:p-12">
-                <div class="flex items-center space-x-4 mb-6">
-                    <span class="bg-purple-600 text-white w-12 h-12 rounded-2xl flex items-center justify-center text-xl font-bold">6</span>
-                    <h2 class="text-3xl font-black text-slate-900">Técnicas de Investigación Digital</h2>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                    <div class="space-y-6">
-                        <p class="text-slate-600 leading-relaxed italic">
-                            "Investigar es el arte de hacer preguntas correctas a los datos correctos."
-                        </p>
-                        <div class="bg-purple-50 p-6 rounded-2xl border-l-8 border-purple-400">
-                            <h5 class="font-bold text-purple-900 mb-2 uppercase text-xs tracking-tighter">Caso Práctico: México hoy</h5>
-                            <p class="text-sm text-purple-800">
-                                Imagina que en tu ciudad se anuncia un nuevo horario de recolección de basura. Los vecinos están confundidos. Usamos <strong>Social Listening</strong> para identificar qué dudas son las más comunes antes de que el problema crezca.
-                            </p>
-                        </div>
-                        <div class="p-4 bg-slate-100 rounded-xl">
-                            <h4 class="font-bold text-sm mb-2 text-purple-700">Concepto Clave: Ciberetnografía</h4>
-                            <p class="text-xs text-slate-500">Es como ser un "antropólogo digital": entras a comunidades en línea para entender su cultura, sus reglas y sus problemas sin invadirlos.</p>
-                        </div>
-                    </div>
-
-                    <div class="bg-slate-900 text-white p-8 rounded-3xl">
-                        <h4 class="text-yellow-400 font-bold mb-6 uppercase italic tracking-wider flex items-center">
-                            <i class="fas fa-tasks mr-2"></i> Actividades Semana 1
-                        </h4>
-                        <div class="space-y-6">
-                            <div class="border-l-2 border-yellow-400 pl-4 py-1">
-                                <p class="text-sm font-bold">Ejercicio A: Mapa de Sentimiento</p>
-                                <p class="text-[10px] text-slate-400 mt-1">Entra a la sección de comentarios de un diario local digital. Clasifica 10 comentarios en: Positivos, Negativos o Neutros sobre una noticia de tu estado.</p>
-                            </div>
-                            <div class="border-l-2 border-yellow-400 pl-4 py-1">
-                                <p class="text-sm font-bold">Ejercicio B: El Observador Silencioso</p>
-                                <p class="text-[10px] text-slate-400 mt-1">Únete a un grupo temático (ej. Mascotas, Deportes, Cocina). Identifica quiénes son los "líderes" de opinión en ese grupo y qué temas generan más discusión.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=80" alt="Observación digital" class="w-full h-48 object-cover opacity-60">
-        </section>
-
-        <!-- TEMA 7: SEMANA 2 -->
-        <section id="tema7" class="bg-white rounded-[2.5rem] shadow-xl overflow-hidden border border-indigo-100 card-hover">
-            <div class="p-8 md:p-12">
-                <div class="flex items-center space-x-4 mb-6">
-                    <span class="bg-indigo-600 text-white w-12 h-12 rounded-2xl flex items-center justify-center text-xl font-bold">7</span>
-                    <h2 class="text-3xl font-black text-slate-900">Gestión Ética de la Información</h2>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                    <div class="space-y-6">
-                        <p class="text-slate-600 leading-relaxed">
-                            No todo lo que está en internet es para nosotros. La ética digital nos enseña a valorar el esfuerzo ajeno y a proteger nuestra reputación digital siendo honestos.
-                        </p>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="p-4 bg-indigo-50 rounded-2xl border border-indigo-100 text-center">
-                                <i class="fas fa-copyright text-indigo-500 text-2xl mb-2"></i>
-                                <p class="text-[10px] font-bold uppercase">Copyright</p>
-                                <p class="text-[9px] text-indigo-700">Todos los derechos reservados.</p>
-                            </div>
-                            <div class="p-4 bg-green-50 rounded-2xl border border-green-100 text-center">
-                                <i class="fab fa-creative-commons text-green-500 text-2xl mb-2"></i>
-                                <p class="text-[10px] font-bold uppercase">Copyleft</p>
-                                <p class="text-[9px] text-green-700">Libertad para compartir.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-indigo-900 text-white p-8 rounded-3xl">
-                        <h4 class="text-yellow-400 font-bold mb-6 uppercase italic tracking-wider flex items-center">
-                            <i class="fas fa-balance-scale mr-2"></i> Actividades Semana 2
-                        </h4>
-                        <div class="space-y-6">
-                            <div class="bg-indigo-800 p-4 rounded-xl border-l-4 border-yellow-400">
-                                <p class="text-sm font-bold">Reto: Detective de Fuentes</p>
-                                <p class="text-[10px] text-slate-300 mt-2 italic">¿Cómo sabemos si una noticia en WhatsApp es real?</p>
-                                <p class="text-[10px] mt-2">Busca 3 sitios web oficiales del Gobierno de México (.gob.mx) y compáralos con un post de Facebook sobre el mismo tema. ¿Qué diferencias encuentras en la formalidad?</p>
-                            </div>
-                            <div class="bg-indigo-800 p-4 rounded-xl border-l-4 border-yellow-400">
-                                <p class="text-sm font-bold">Taller: Licencias Libres</p>
-                                <p class="text-[10px] mt-2">Crea una lista de 3 bancos de sonidos o imágenes que utilicen licencias <strong>Creative Commons</strong>. Explica qué significa el símbolo "BY-NC" en una de ellas.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- TEMA 8: SEMANA 3 Y 4 -->
-        <section id="tema8" class="bg-white rounded-[2.5rem] shadow-xl overflow-hidden border border-emerald-100 card-hover">
-            <div class="p-8 md:p-12">
-                <div class="flex items-center space-x-4 mb-6">
-                    <span class="bg-emerald-600 text-white w-12 h-12 rounded-2xl flex items-center justify-center text-xl font-bold">8</span>
-                    <h2 class="text-3xl font-black text-slate-900">Sistematización y Síntesis</h2>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                    <div class="space-y-6">
-                        <p class="text-slate-600 leading-relaxed">
-                            Organizar es ganar. Sistematizar significa agrupar lo que descubrimos para que sea fácil de explicar a otros.
-                        </p>
-                        <div class="bg-emerald-50 p-6 rounded-2xl">
-                            <h5 class="font-bold text-emerald-900 mb-3 text-sm">Ejemplo Práctico:</h5>
-                            <p class="text-[11px] text-emerald-800 italic">
-                                Si investigas por qué tus compañeros tiran basura, podrías sistematizar así: <br><br>
-                                <strong>Categoría 1:</strong> Falta de botes (5 personas).<br>
-                                <strong>Categoría 2:</strong> Descuido/Cultura (10 personas).<br>
-                                <strong>Categoría 3:</strong> Botes llenos (2 personas).<br><br>
-                                ¡Esto nos dice que el problema es de <strong>cultura</strong>, no de botes!
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="bg-emerald-900 text-white p-8 rounded-3xl">
-                        <h4 class="text-yellow-400 font-bold mb-6 uppercase italic tracking-wider flex items-center">
-                            <i class="fas fa-layer-group mr-2"></i> Actividades Semana 3 y 4
-                        </h4>
-                        <div class="space-y-6">
-                            <div class="bg-emerald-800/50 p-4 rounded-xl border border-emerald-600">
-                                <p class="text-sm font-bold uppercase">Semana 3: Ordenando el Caos</p>
-                                <p class="text-[10px] mt-2 leading-relaxed">
-                                    Toma los resultados de tu observación de la Semana 1. Crea una tabla (puedes dibujarla en tu libreta) con 3 columnas: Hallazgo, Fuente y Categoría. ¿Qué patrón logras ver?
-                                </p>
-                            </div>
-                            <div class="bg-emerald-800/50 p-4 rounded-xl border border-emerald-600">
-                                <p class="text-sm font-bold uppercase">Semana 4: El Reporte Final</p>
-                                <p class="text-[10px] mt-2 leading-relaxed text-yellow-100 font-semibold">
-                                    ESTA ES TU EVALUACIÓN DEL PARCIAL.
-                                </p>
-                                <p class="text-[10px] mt-2">
-                                    Escribe un reporte de 2 páginas donde integres: <br>
-                                    1. Qué problema investigaste. <br>
-                                    2. Qué descubriste observando redes. <br>
-                                    3. Qué fuentes éticas usaste para validar la información.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="bg-emerald-600 p-6 text-white text-center italic text-xs uppercase tracking-widest font-bold">
-                "No hay investigación pequeña, solo miradas poco curiosas." - Ing. Garcia Ramos
-            </div>
-        </section>
-
+    <!-- Contenedor Dinámico -->
+    <main class="max-w-7xl mx-auto px-4 py-12">
+        <div id="week-content" class="animate-content">
+            <!-- Inyectado por JS -->
+        </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-500 py-16 px-4 text-center mt-20">
-        <div class="max-w-7xl mx-auto border-t border-slate-800 pt-10">
-            <p class="text-white font-bold text-lg mb-2 italic uppercase tracking-widest">Cultura Digital II</p>
-            <p class="text-sm mb-4">Ing. Cruz Enrique Garcia Ramos</p>
-            <a href="index.html" class="bg-white/10 text-white px-8 py-3 rounded-full hover:bg-white/20 transition text-xs font-bold uppercase tracking-widest inline-flex items-center">
-                <i class="fas fa-arrow-left mr-3"></i> Regresar al Portal Principal
-            </a>
-            <p class="text-[10px] mt-10 opacity-30 uppercase">Educación basada en el Modelo 2025 - Humanismo Mexicano</p>
+    <footer class="bg-slate-950 text-slate-500 py-12 px-4 text-center border-t border-slate-900">
+        <div class="max-w-4xl mx-auto text-slate-400">
+            <p class="text-white font-bold text-lg mb-2 italic">Submódulo 2: Implementa Bases de Datos No Relacionales</p>
+            <p class="text-sm uppercase tracking-widest font-medium">Docente: Ing. Cruz Enrique Garcia Ramos • CBTis 134</p>
         </div>
     </footer>
 
+    <script>
+        const contentData = {
+            6: {
+                title: "Inmersión al Aggregation Framework",
+                subtitle: "Semana 6: Teoría de la Tubería de Datos",
+                theory: `Para procesar Big Data, el comando <code>find()</code> es insuficiente. El **Framework de Agregación** permite ejecutar análisis complejos directamente en el servidor, devolviendo solo el resultado final.
+                        <br><br>
+                        <strong>Etapas Fundamentales (Stages):</strong>
+                        <ul class="list-disc ml-5 mt-4 space-y-4 text-slate-700">
+                            <li><strong>$match:</strong> Filtro de entrada. Elimina documentos que no cumplen criterios antes de procesarlos.</li>
+                            <li><strong>$project:</strong> El escultor. Permite renombrar campos, crear calculados (ej. Precio * Stock) o extraer partes de fechas con <code>$year</code> o <code>$month</code>.</li>
+                            <li><strong>$limit / $skip:</strong> Control de flujo para paginación de datos a gran escala.</li>
+                        </ul>
+                        <br>
+                        <div class="p-5 bg-indigo-50 rounded-2xl border border-indigo-200">
+                            <h5 class="font-bold text-indigo-900 mb-4 uppercase text-[10px] tracking-widest text-center">Tubería de Procesamiento</h5>
+                            <div class="flex flex-wrap items-center justify-center gap-4">
+                                <div class="diagram-node">ENTRADA (10k docs)</div>
+                                <div class="diagram-arrow">➔</div>
+                                <div class="diagram-node bg-blue-50">$match (Filter)</div>
+                                <div class="diagram-arrow">➔</div>
+                                <div class="diagram-node bg-emerald-50">$project (Shape)</div>
+                                <div class="diagram-arrow">➔</div>
+                                <div class="diagram-node font-bold border-indigo-500 text-indigo-600">RESULTADO (50 docs)</div>
+                            </div>
+                        </div>
+                        <br>
+                        <strong>Ejemplo de Campo Calculado:</strong>
+                        <div class="example-box mt-2">
+                            <p class="text-sm">Si vendemos productos en una ferretería y queremos saber el valor total de cada producto en inventario:</p>
+                            <code class="text-xs bg-slate-200 p-1 rounded font-mono">"{ $project: { subtotal: { $multiply: ['$precio', '$stock'] } } }"</code>
+                        </div>`,
+                image: "https://images.unsplash.com/photo-1551288049-bbda38a5f9a2?q=80&w=800&auto=format&fit=crop",
+                concepts: ["Aggregation Pipeline", "Stages", "Data Streams", "$project Logic"],
+                code: `// CONTEXTO: SISTEMA FERRETERO\n// Reto: Productos caros con cálculo de IVA\n\ndb.productos.aggregate([\n  { \n    "$match": { "precio": { "$gt": 1000 }, "activo": true } \n  },\n  { \n    "$project": { \n      "_id": 0, \n      "producto": { "$toUpper": "$nombre" }, \n      "stock_actual": "$stock",\n      "precio_iva": { "$multiply": ["$precio", 1.16] },\n      "es_escasez": { "$lt": ["$stock", 5] } \n    } \n  }\n]);`,
+                exercise: `<strong>Laboratorio Extendido (8 Horas):</strong><br><br>
+                           <span class="step-pill">1</span> <strong>Filtros Compuestos (2h):</strong> Filtra productos de 'Electrónica' que tengan stock entre 10 y 50 unidades y que el proveedor sea "Sony".<br><br>
+                           <span class="step-pill">2</span> <strong>Transformación de Datos (3h):</strong> Crea una proyección que oculte el ID, ponga el nombre en mayúsculas y cree un campo "etiqueta_precio" que diga "CARO" si el precio > 5000 (Pista: usa <code>$cond</code>).<br><br>
+                           <span class="step-pill">3</span> <strong>Análisis Temporal (3h):</strong> Suponiendo que tienes un campo 'fecha_ingreso', usa "$project" y "$month" para mostrar el nombre del producto y el mes en que entró al almacén.`
+            },
+            7: {
+                title: "Análisis de Datos: Agrupamiento Profundo",
+                subtitle: "Semana 7: Inteligencia de Negocios NoSQL",
+                theory: `La etapa **$group** es el motor estadístico de MongoDB. Permite resumir información masiva en métricas de negocio accionables.
+                        <br><br>
+                        <strong>Acumuladores Avanzados:</strong>
+                        <ul class="list-disc ml-5 mt-4 space-y-4 text-slate-700">
+                            <li><strong>$push:</strong> Crea un arreglo con los valores de los documentos agrupados. Útil para ver "todos los productos vendidos por un cajero".</li>
+                            <li><strong>$addToSet:</strong> Igual que push, pero evita duplicados (crea un conjunto único).</li>
+                            <li><strong>$sum / $avg:</strong> Cálculos matemáticos básicos sobre el grupo.</li>
+                        </ul>
+                        <br>
+                        <strong>Desenrollado de Arreglos ($unwind):</strong>
+                        <p class="text-sm text-slate-600 italic">Si un documento tiene un arreglo de etiquetas, $unwind crea una copia del documento por cada etiqueta. Esto permite agrupar por etiqueta individualmente.</p>`,
+                image: "https://images.unsplash.com/photo-1551288049-bbda38a5f9a2?q=80&w=800&auto=format&fit=crop",
+                concepts: ["$group", "Accumulators", "$unwind", "BI Analytics"],
+                code: `// CONTEXTO: TIENDA OXXO\n// Reto: Ventas totales por categoría y lista de productos únicos\n\ndb.ventas.aggregate([\n  { "$unwind": "$productos" }, // Desglosa lista de productos\n  { \n    "$group": { \n      "_id": "$productos.categoria", \n      "total_venta": { "$sum": "$productos.precio" },\n      "nombres_productos": { "$addToSet": "$productos.nombre" }\n    } \n  }\n]);`,
+                exercise: `<strong>Laboratorio de Estadísticas (8 Horas):</strong><br><br>
+                           <span class="step-pill">1</span> <strong>Resumen Financiero (2h):</strong> Calcula el promedio de precio y el total de stock agrupado por "Proveedor".<br><br>
+                           <span class="step-pill">2</span> <strong>Análisis de Preferencias (3h):</strong> En una colección de 'Usuarios', agrupa por 'Ciudad' y usa <code>$push</code> para listar los nombres de todos los usuarios de esa ciudad.<br><br>
+                           <span class="step-pill">3</span> <strong>Top Mensual (3h):</strong> Agrupa las ventas por mes y año, calcula el total recaudado y ordena los meses de mayor a menor ganancia.`
+            },
+            8: {
+                title: "Uniones y Relacionamiento ($lookup)",
+                subtitle: "Semana 8: Modelado Relacional en NoSQL",
+                theory: `**$lookup** permite traer datos de otras colecciones. Aunque MongoDB prefiere el *Embedding*, hay casos (como catálogos de proveedores o perfiles de usuario) donde el *Linking* es necesario.
+                        <br><br>
+                        <strong>Sintaxis de Tubería Interna (Avanzado):</strong>
+                        <p class="text-sm text-slate-700 mb-4">Podemos usar <code>pipeline</code> dentro de un lookup para filtrar los datos de la colección externa antes de unirlos, optimizando la memoria RAM del servidor.</p>
+                        <div class="example-box">
+                            <i class="fas fa-link text-indigo-600 mr-2"></i><strong>Lógica de Unión:</strong><br>
+                            <span class="text-xs">DOC PRINCIPAL (localField) <---> DOC EXTERNO (foreignField) = ARREGLO DE RESULTADOS</span>
+                        </div>`,
+                image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc51?q=80&w=800&auto=format&fit=crop",
+                concepts: ["Relational Joins", "$lookup Pipeline", "Data Merging", "Foreign Keys"],
+                code: `// CONTEXTO: SISTEMA DE PEDIDOS\n// Reto: Pedidos unidos con datos de clientes, ocultando datos sensibles\n\ndb.pedidos.aggregate([\n  {\n    "$lookup": {\n      "from": "clientes",\n      "localField": "id_cliente",\n      "foreignField": "_id",\n      "as": "info_cliente"\n    }\n  },\n  { "$unwind": "$info_cliente" },\n  { "$project": { "info_cliente.password": 0, "info_cliente.token": 0 } }\n]);`,
+                exercise: `<strong>Taller de Integración (8 Horas):</strong><br><br>
+                           <span class="step-pill">1</span> <strong>Unión Simple (2h):</strong> Une la colección 'Productos' con 'Proveedores'. Muestra el nombre del producto y el teléfono del proveedor.<br><br>
+                           <span class="step-pill">2</span> <strong>Unión Doble (3h):</strong> Une 'Ventas' con 'Productos' y luego con 'Vendedores'. Crea un reporte donde se vea quién vendió qué cosa.<br><br>
+                           <span class="step-pill">3</span> <strong>Filtros en Unión (3h):</strong> Usa un lookup para traer solo los comentarios de una 'Publicación' que tengan más de 5 likes (Usa <code>pipeline</code> dentro del <code>$lookup</code>).`
+            },
+            9: {
+                title: "Estrategias de Indexación Avanzada",
+                subtitle: "Semana 9: Optimizando el Tiempo de Respuesta",
+                theory: `Los índices son la diferencia entre una consulta de 5 segundos y una de 5 milisegundos.
+                        <br><br>
+                        <strong>Tipos de Índices en Producción:</strong>
+                        <ul class="list-disc ml-5 mt-4 space-y-4 text-slate-700">
+                            <li><strong>Índice Compuesto:</strong> Indexa varios campos a la vez. Regla ESR: Equality (Igualdad), Sort (Orden), Range (Rango).</li>
+                            <li><strong>Índice Único:</strong> Garantiza que no haya duplicados (ej: correos electrónicos o CURP).</li>
+                            <li><strong>Índice TTL:</strong> Borra documentos automáticamente tras un tiempo (ideal para sesiones de usuario).</li>
+                            <li><strong>Índice Parcial:</strong> Solo indexa documentos que cumplen una condición (ahorra espacio en disco).</li>
+                        </ul>`,
+                image: "https://images.unsplash.com/photo-1454165833762-0204b28c6797?q=80&w=800&auto=format&fit=crop",
+                concepts: ["Compound Index", "TTL & Unique", "Partial Indexes", "ESR Rule"],
+                code: `// EJEMPLO: Configuración de Índices Profesionales\n\n// 1. Índice Compuesto para búsquedas de stock por tienda\ndb.inventario.createIndex({ "tienda_id": 1, "stock": -1 });\n\n// 2. Índice Parcial: Indexar solo productos de lujo para búsqueda rápida\ndb.productos.createIndex(\n  { "nombre": 1 },\n  { "partialFilterExpression": { "precio": { "$gt": 10000 } } }\n);`,
+                exercise: `<strong>Laboratorio de Rendimiento (8 Horas):</strong><br><br>
+                           <span class="step-pill">1</span> <strong>Seguridad de Datos (2h):</strong> Crea un índice único para el campo 'sku' de tus productos. Intenta insertar un duplicado y documenta el error.<br><br>
+                           <span class="step-pill">2</span> <strong>Optimización de Sesiones (3h):</strong> Crea una colección 'logs' y configúrale un índice TTL para que los registros se borren automáticamente después de 24 horas.<br><br>
+                           <span class="step-pill">3</span> <strong>Búsqueda Multicriterio (3h):</strong> Crea el índice compuesto óptimo para buscar alumnos por 'especialidad' (Igualdad) y ordenarlos por 'promedio' (Orden).`
+            },
+            10: {
+                title: "Profiling & Performance Tuning",
+                subtitle: "Semana 10: Auditoría de Consultas",
+                theory: `Un ingeniero NoSQL audita su código. Usamos **.explain("executionStats")** para ver cómo trabaja el motor.
+                        <br><br>
+                        <strong>Análisis de Resultados:</strong>
+                        <ul class="list-disc ml-5 mt-4 space-y-3 text-slate-700">
+                            <li><strong>COLLSCAN:</strong> Malo. Se leyó toda la colección.</li>
+                            <li><strong>IXSCAN:</strong> Bueno. Se usó un índice.</li>
+                            <li><strong>Covered Query:</strong> Excelente. MongoDB no tocó el disco duro; respondió usando solo los datos del índice en memoria RAM.</li>
+                        </ul>
+                        <br>
+                        <strong>Capped Collections:</strong>
+                        <p class="text-sm text-slate-600 italic">Colecciones de tamaño fijo para streaming de datos (logs, chats, sensores) donde los datos viejos se borran automáticamente al llenarse el espacio.</p>`,
+                image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+                concepts: ["Execution Plan", "Covered Queries", "Capped Colls", "Query Tuning"],
+                code: `// EJEMPLO: Auditoría Técnica\n\n// Analizar si una consulta usa índices correctamente\ndb.usuarios.find({ "email": "er@mail.com" }).explain("executionStats");\n\n// Crear colección circular de 10MB para histórico de errores\ndb.createCollection("error_logs", { "capped": true, "size": 10485760, "max": 1000 });`,
+                exercise: `<strong>Evaluación de Eficiencia (8 Horas):</strong><br><br>
+                           <span class="step-pill">1</span> <strong>Diagnóstico (2h):</strong> Ejecuta una búsqueda por nombre en tu base de datos y usa <code>explain()</code>. ¿Cuántos documentos examinó? Documenta el tiempo.<br><br>
+                           <span class="step-pill">2</span> <strong>Refactorización (3h):</strong> Crea un índice para ese campo y repite el proceso. Compara los milisegundos y los documentos examinados.<br><br>
+                           <span class="step-pill">3</span> <strong>Arquitectura de Logs (3h):</strong> Crea una Capped Collection para tu sistema OXXO que guarde los últimos 500 movimientos de caja.`
+            }
+        };
+
+        function switchWeek(num) {
+            // UI Update: Botones
+            for(let i=6; i<=10; i++) {
+                const btn = document.getElementById('tab'+i);
+                if(btn) btn.className = "week-tab text-slate-600 flex-1 min-w-[110px] py-4 rounded-xl font-bold text-xs uppercase flex flex-col items-center hover:bg-white/50 transition";
+            }
+            document.getElementById('tab'+num).className = "week-tab active flex-1 min-w-[110px] py-4 rounded-xl font-bold text-xs uppercase flex flex-col items-center";
+
+            // Data Update
+            const d = contentData[num];
+            const container = document.getElementById('week-content');
+            
+            container.innerHTML = `
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                    <div class="space-y-6 text-slate-800">
+                        <div>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                ${d.concepts.map(c => `<span class="concept-badge"><i class="fas fa-microchip mr-1 opacity-50"></i>${c}</span>`).join('')}
+                            </div>
+                            <h2 class="text-3xl md:text-4xl font-black text-slate-900 leading-tight">${d.title}</h2>
+                            <p class="text-indigo-600 font-bold text-xs mt-2 uppercase tracking-widest italic border-l-2 border-indigo-600 pl-2">${d.subtitle}</p>
+                        </div>
+                        
+                        <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 leading-relaxed theory-card">
+                            <h4 class="font-bold text-slate-900 mb-6 border-b border-slate-100 pb-3 flex items-center">
+                                <i class="fas fa-book-open mr-2 text-indigo-600"></i> Lección Teórica Detallada
+                            </h4>
+                            <div class="text-[17px] space-y-4">
+                                ${d.theory}
+                            </div>
+                        </div>
+
+                        <div class="bg-indigo-600 p-8 rounded-3xl shadow-lg relative overflow-hidden text-white group border-b-8 border-indigo-900">
+                            <i class="fas fa-terminal absolute -right-6 -bottom-6 text-9xl opacity-10 transition-transform group-hover:scale-110"></i>
+                            <h4 class="font-black text-indigo-200 text-[10px] uppercase tracking-tighter mb-2">
+                                <i class="fas fa-laptop-code mr-1"></i> Retos Semanales (8 Horas de Laboratorio)
+                            </h4>
+                            <div class="text-white font-bold text-sm italic leading-snug">${d.exercise}</div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-8">
+                        <div class="rounded-3xl overflow-hidden shadow-2xl h-72 border-4 border-white relative group">
+                            <img src="${d.image}" alt="Concepto Visual" class="w-full h-full object-cover transition transform group-hover:scale-105 duration-1000" onerror="this.src='https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                            <div class="absolute bottom-6 left-6 text-white">
+                                <p class="text-xs font-bold uppercase tracking-widest opacity-70 mb-1">CBTis 134 • Especialidad</p>
+                                <p class="text-xl font-black italic tracking-tighter">Programación de Datos Masivos</p>
+                            </div>
+                        </div>
+
+                        <div class="code-container p-6 rounded-3xl shadow-2xl overflow-hidden">
+                            <div class="flex space-x-2 mb-6 border-b border-slate-800 pb-4">
+                                <div class="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-green-500/80"></div>
+                                <span class="text-[10px] text-slate-500 font-mono pl-3 tracking-widest uppercase italic font-bold">Query_Engine_v2.bin</span>
+                            </div>
+                            <pre class="font-mono text-indigo-200 text-sm overflow-x-auto py-2 leading-relaxed selection:bg-indigo-500 selection:text-white"><code>${d.code}</code></pre>
+                            <button onclick="copyCode(this)" class="mt-8 w-full bg-indigo-600 hover:bg-indigo-700 text-white text-[10px] font-black py-4 rounded-xl transition-all flex items-center justify-center space-x-2 shadow-lg active:scale-95 uppercase tracking-widest border border-indigo-400">
+                                <i class="fas fa-copy"></i> <span>Copiar Sintaxis de Clase</span>
+                            </button>
+                        </div>
+                        
+                        <div class="p-4 bg-indigo-50 rounded-2xl flex items-center space-x-4 border border-indigo-100">
+                             <div class="bg-white p-3 rounded-xl shadow-sm"><i class="fas fa-info-circle text-indigo-500 text-xl"></i></div>
+                             <p class="text-[11px] font-bold text-slate-600 uppercase tracking-tight leading-tight italic">Referencia: El Framework de Agregación es la base para el análisis en Big Data.</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            container.classList.remove('animate-content');
+            void container.offsetWidth; 
+            container.classList.add('animate-content');
+        }
+
+        function copyCode(btn) {
+            const code = btn.previousElementSibling.innerText;
+            const temp = document.createElement('textarea');
+            temp.value = code;
+            document.body.appendChild(temp);
+            temp.select();
+            document.execCommand('copy');
+            document.body.removeChild(temp);
+            
+            const original = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> <span>¡CÓDIGO COPIADO!</span>';
+            btn.classList.replace('bg-indigo-600', 'bg-emerald-600');
+            btn.classList.replace('border-indigo-400', 'border-emerald-400');
+            setTimeout(() => { 
+                btn.innerHTML = original; 
+                btn.classList.replace('bg-emerald-600', 'bg-indigo-600');
+                btn.classList.replace('border-emerald-400', 'border-indigo-400');
+            }, 2000);
+        }
+
+        window.onload = () => switchWeek(6);
+    </script>
 </body>
 </html>
