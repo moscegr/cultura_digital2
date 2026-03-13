@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcial 2 - Cultura Digital II</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Iconos FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .gradient-purple {
+            background: linear-gradient(135deg, #4c1d95 0%, #8b5cf6 100%);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .step-circle {
+            width: 40px;
+            height: 40px;
+            background: #8b5cf6;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Navegación -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-laptop-code text-purple-600 text-2xl"></i>
+                    <span class="font-bold text-xl tracking-tight text-purple-900 uppercase italic">Cultura Digital II</span>
+                </div>
+                <div class="hidden md:flex space-x-8 font-bold">
+                    <a href="index.html" class="text-gray-500 hover:text-purple-600 transition">Inicio</a>
+                    <a href="parcial1.html" class="text-gray-500 hover:text-purple-600 transition">Parcial 1</a>
+                    <a href="parcial2.html" class="text-purple-600 border-b-2 border-purple-600">Parcial 2</a>
+                    <a href="parcial3.html" class="text-gray-500 hover:text-purple-600 transition">Parcial 3</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Encabezado -->
+    <header class="gradient-purple text-white py-12 px-4 shadow-lg">
+        <div class="max-w-7xl mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-black mb-2 uppercase tracking-tighter italic">Parcial 2: El Investigador Digital</h1>
+            <p class="text-xl text-purple-100 font-medium mb-4">Ing. Cruz Enrique Garcia Ramos</p>
+            <div class="inline-block bg-white/20 backdrop-blur-md px-6 py-2 rounded-full border border-white/30 text-xs font-bold uppercase tracking-widest">
+                Plan de 4 Semanas de Trabajo
+            </div>
+        </div>
+    </header>
+
+    <!-- CALENDARIO DE RUTA (NUEVO) -->
+    <section class="max-w-7xl mx-auto py-12 px-4">
+        <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-100">
+            <h2 class="text-2xl font-bold text-center mb-10 text-slate-900 uppercase italic tracking-tighter">Hoja de Ruta del Parcial</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="p-6 border-t-4 border-purple-500 bg-slate-50 rounded-b-xl">
+                    <span class="text-xs font-bold text-purple-600 uppercase">Semana 1</span>
+                    <h4 class="font-bold mt-2">Observación Digital</h4>
+                    <p class="text-xs text-slate-500 mt-2">Aprendemos a escuchar qué dice la red sobre nuestra comunidad.</p>
+                </div>
+                <div class="p-6 border-t-4 border-indigo-500 bg-slate-50 rounded-b-xl">
+                    <span class="text-xs font-bold text-indigo-600 uppercase">Semana 2</span>
+                    <h4 class="font-bold mt-2">Ética y Legalidad</h4>
+                    <p class="text-xs text-slate-500 mt-2">Protegemos nuestra integridad y respetamos autores.</p>
+                </div>
+                <div class="p-6 border-t-4 border-emerald-500 bg-slate-50 rounded-b-xl">
+                    <span class="text-xs font-bold text-emerald-600 uppercase">Semana 3</span>
+                    <h4 class="font-bold mt-2">Sistematización</h4>
+                    <p class="text-xs text-slate-500 mt-2">Convertimos comentarios sueltos en datos útiles.</p>
+                </div>
+                <div class="p-6 border-t-4 border-yellow-500 bg-slate-50 rounded-b-xl">
+                    <span class="text-xs font-bold text-yellow-600 uppercase">Semana 4</span>
+                    <h4 class="font-bold mt-2">Reporte Crítico</h4>
+                    <p class="text-xs text-slate-500 mt-2">Creamos una conclusión basada en evidencias.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido Principal -->
+    <main class="max-w-5xl mx-auto py-8 px-4 space-y-16">
+
+        <!-- TEMA 6: SEMANA 1 -->
+        <section id="tema6" class="bg-white rounded-[2.5rem] shadow-xl overflow-hidden border border-purple-100 card-hover">
+            <div class="p-8 md:p-12">
+                <div class="flex items-center space-x-4 mb-6">
+                    <span class="bg-purple-600 text-white w-12 h-12 rounded-2xl flex items-center justify-center text-xl font-bold">6</span>
+                    <h2 class="text-3xl font-black text-slate-900">Técnicas de Investigación Digital</h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <div class="space-y-6">
+                        <p class="text-slate-600 leading-relaxed italic">
+                            "Investigar es el arte de hacer preguntas correctas a los datos correctos."
+                        </p>
+                        <div class="bg-purple-50 p-6 rounded-2xl border-l-8 border-purple-400">
+                            <h5 class="font-bold text-purple-900 mb-2 uppercase text-xs tracking-tighter">Caso Práctico: México hoy</h5>
+                            <p class="text-sm text-purple-800">
+                                Imagina que en tu ciudad se anuncia un nuevo horario de recolección de basura. Los vecinos están confundidos. Usamos <strong>Social Listening</strong> para identificar qué dudas son las más comunes antes de que el problema crezca.
+                            </p>
+                        </div>
+                        <div class="p-4 bg-slate-100 rounded-xl">
+                            <h4 class="font-bold text-sm mb-2 text-purple-700">Concepto Clave: Ciberetnografía</h4>
+                            <p class="text-xs text-slate-500">Es como ser un "antropólogo digital": entras a comunidades en línea para entender su cultura, sus reglas y sus problemas sin invadirlos.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 text-white p-8 rounded-3xl">
+                        <h4 class="text-yellow-400 font-bold mb-6 uppercase italic tracking-wider flex items-center">
+                            <i class="fas fa-tasks mr-2"></i> Actividades Semana 1
+                        </h4>
+                        <div class="space-y-6">
+                            <div class="border-l-2 border-yellow-400 pl-4 py-1">
+                                <p class="text-sm font-bold">Ejercicio A: Mapa de Sentimiento</p>
+                                <p class="text-[10px] text-slate-400 mt-1">Entra a la sección de comentarios de un diario local digital. Clasifica 10 comentarios en: Positivos, Negativos o Neutros sobre una noticia de tu estado.</p>
+                            </div>
+                            <div class="border-l-2 border-yellow-400 pl-4 py-1">
+                                <p class="text-sm font-bold">Ejercicio B: El Observador Silencioso</p>
+                                <p class="text-[10px] text-slate-400 mt-1">Únete a un grupo temático (ej. Mascotas, Deportes, Cocina). Identifica quiénes son los "líderes" de opinión en ese grupo y qué temas generan más discusión.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=80" alt="Observación digital" class="w-full h-48 object-cover opacity-60">
+        </section>
+
+        <!-- TEMA 7: SEMANA 2 -->
+        <section id="tema7" class="bg-white rounded-[2.5rem] shadow-xl overflow-hidden border border-indigo-100 card-hover">
+            <div class="p-8 md:p-12">
+                <div class="flex items-center space-x-4 mb-6">
+                    <span class="bg-indigo-600 text-white w-12 h-12 rounded-2xl flex items-center justify-center text-xl font-bold">7</span>
+                    <h2 class="text-3xl font-black text-slate-900">Gestión Ética de la Información</h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <div class="space-y-6">
+                        <p class="text-slate-600 leading-relaxed">
+                            No todo lo que está en internet es para nosotros. La ética digital nos enseña a valorar el esfuerzo ajeno y a proteger nuestra reputación digital siendo honestos.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="p-4 bg-indigo-50 rounded-2xl border border-indigo-100 text-center">
+                                <i class="fas fa-copyright text-indigo-500 text-2xl mb-2"></i>
+                                <p class="text-[10px] font-bold uppercase">Copyright</p>
+                                <p class="text-[9px] text-indigo-700">Todos los derechos reservados.</p>
+                            </div>
+                            <div class="p-4 bg-green-50 rounded-2xl border border-green-100 text-center">
+                                <i class="fab fa-creative-commons text-green-500 text-2xl mb-2"></i>
+                                <p class="text-[10px] font-bold uppercase">Copyleft</p>
+                                <p class="text-[9px] text-green-700">Libertad para compartir.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-indigo-900 text-white p-8 rounded-3xl">
+                        <h4 class="text-yellow-400 font-bold mb-6 uppercase italic tracking-wider flex items-center">
+                            <i class="fas fa-balance-scale mr-2"></i> Actividades Semana 2
+                        </h4>
+                        <div class="space-y-6">
+                            <div class="bg-indigo-800 p-4 rounded-xl border-l-4 border-yellow-400">
+                                <p class="text-sm font-bold">Reto: Detective de Fuentes</p>
+                                <p class="text-[10px] text-slate-300 mt-2 italic">¿Cómo sabemos si una noticia en WhatsApp es real?</p>
+                                <p class="text-[10px] mt-2">Busca 3 sitios web oficiales del Gobierno de México (.gob.mx) y compáralos con un post de Facebook sobre el mismo tema. ¿Qué diferencias encuentras en la formalidad?</p>
+                            </div>
+                            <div class="bg-indigo-800 p-4 rounded-xl border-l-4 border-yellow-400">
+                                <p class="text-sm font-bold">Taller: Licencias Libres</p>
+                                <p class="text-[10px] mt-2">Crea una lista de 3 bancos de sonidos o imágenes que utilicen licencias <strong>Creative Commons</strong>. Explica qué significa el símbolo "BY-NC" en una de ellas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TEMA 8: SEMANA 3 Y 4 -->
+        <section id="tema8" class="bg-white rounded-[2.5rem] shadow-xl overflow-hidden border border-emerald-100 card-hover">
+            <div class="p-8 md:p-12">
+                <div class="flex items-center space-x-4 mb-6">
+                    <span class="bg-emerald-600 text-white w-12 h-12 rounded-2xl flex items-center justify-center text-xl font-bold">8</span>
+                    <h2 class="text-3xl font-black text-slate-900">Sistematización y Síntesis</h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <div class="space-y-6">
+                        <p class="text-slate-600 leading-relaxed">
+                            Organizar es ganar. Sistematizar significa agrupar lo que descubrimos para que sea fácil de explicar a otros.
+                        </p>
+                        <div class="bg-emerald-50 p-6 rounded-2xl">
+                            <h5 class="font-bold text-emerald-900 mb-3 text-sm">Ejemplo Práctico:</h5>
+                            <p class="text-[11px] text-emerald-800 italic">
+                                Si investigas por qué tus compañeros tiran basura, podrías sistematizar así: <br><br>
+                                <strong>Categoría 1:</strong> Falta de botes (5 personas).<br>
+                                <strong>Categoría 2:</strong> Descuido/Cultura (10 personas).<br>
+                                <strong>Categoría 3:</strong> Botes llenos (2 personas).<br><br>
+                                ¡Esto nos dice que el problema es de <strong>cultura</strong>, no de botes!
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-emerald-900 text-white p-8 rounded-3xl">
+                        <h4 class="text-yellow-400 font-bold mb-6 uppercase italic tracking-wider flex items-center">
+                            <i class="fas fa-layer-group mr-2"></i> Actividades Semana 3 y 4
+                        </h4>
+                        <div class="space-y-6">
+                            <div class="bg-emerald-800/50 p-4 rounded-xl border border-emerald-600">
+                                <p class="text-sm font-bold uppercase">Semana 3: Ordenando el Caos</p>
+                                <p class="text-[10px] mt-2 leading-relaxed">
+                                    Toma los resultados de tu observación de la Semana 1. Crea una tabla (puedes dibujarla en tu libreta) con 3 columnas: Hallazgo, Fuente y Categoría. ¿Qué patrón logras ver?
+                                </p>
+                            </div>
+                            <div class="bg-emerald-800/50 p-4 rounded-xl border border-emerald-600">
+                                <p class="text-sm font-bold uppercase">Semana 4: El Reporte Final</p>
+                                <p class="text-[10px] mt-2 leading-relaxed text-yellow-100 font-semibold">
+                                    ESTA ES TU EVALUACIÓN DEL PARCIAL.
+                                </p>
+                                <p class="text-[10px] mt-2">
+                                    Escribe un reporte de 2 páginas donde integres: <br>
+                                    1. Qué problema investigaste. <br>
+                                    2. Qué descubriste observando redes. <br>
+                                    3. Qué fuentes éticas usaste para validar la información.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-emerald-600 p-6 text-white text-center italic text-xs uppercase tracking-widest font-bold">
+                "No hay investigación pequeña, solo miradas poco curiosas." - Ing. Garcia Ramos
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-500 py-16 px-4 text-center mt-20">
+        <div class="max-w-7xl mx-auto border-t border-slate-800 pt-10">
+            <p class="text-white font-bold text-lg mb-2 italic uppercase tracking-widest">Cultura Digital II</p>
+            <p class="text-sm mb-4">Ing. Cruz Enrique Garcia Ramos</p>
+            <a href="index.html" class="bg-white/10 text-white px-8 py-3 rounded-full hover:bg-white/20 transition text-xs font-bold uppercase tracking-widest inline-flex items-center">
+                <i class="fas fa-arrow-left mr-3"></i> Regresar al Portal Principal
+            </a>
+            <p class="text-[10px] mt-10 opacity-30 uppercase">Educación basada en el Modelo 2025 - Humanismo Mexicano</p>
+        </div>
+    </footer>
+
+</body>
+</html>
