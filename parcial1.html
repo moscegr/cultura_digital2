@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcial 1 - Cultura Digital II</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Iconos FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .gradient-blue {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Navegación -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-laptop-code text-blue-600 text-2xl"></i>
+                    <span class="font-bold text-xl tracking-tight text-blue-900 uppercase italic">Cultura Digital II</span>
+                </div>
+                <div class="hidden md:flex space-x-8 font-bold">
+                    <a href="index.html" class="text-gray-500 hover:text-blue-600 transition">Inicio</a>
+                    <a href="parcial1.html" class="text-blue-600 border-b-2 border-blue-600">Parcial 1</a>
+                    <a href="parcial2.html" class="text-gray-500 hover:text-blue-600 transition">Parcial 2</a>
+                    <a href="parcial3.html" class="text-gray-500 hover:text-blue-600 transition">Parcial 3</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Encabezado -->
+    <header class="gradient-blue text-white py-12 px-4 shadow-lg">
+        <div class="max-w-7xl mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-black mb-2 uppercase tracking-tighter italic">Parcial 1: Colaboración y Soberanía</h1>
+            <p class="text-xl text-blue-100 font-medium mb-4">Ing. Cruz Enrique Garcia Ramos</p>
+            <div class="inline-block bg-white/20 backdrop-blur-md px-6 py-2 rounded-full border border-white/30 text-xs font-bold uppercase tracking-widest">
+                Construyendo Autonomía Digital - 4 Semanas
+            </div>
+        </div>
+    </header>
+
+    <!-- CALENDARIO DE RUTA -->
+    <section class="max-w-7xl mx-auto py-12 px-4">
+        <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-100">
+            <h2 class="text-2xl font-bold text-center mb-10 text-slate-900 uppercase italic tracking-tighter">Hoja de Ruta del Parcial</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="p-6 border-t-4 border-blue-500 bg-slate-50 rounded-b-xl">
+                    <span class="text-xs font-bold text-blue-600 uppercase">Semana 1</span>
+                    <h4 class="font-bold mt-2">Documentos Vivos</h4>
+                    <p class="text-xs text-slate-500 mt-2">Escritura colectiva y glosarios compartidos en Cryptpad.</p>
+                </div>
+                <div class="p-6 border-t-4 border-cyan-500 bg-slate-50 rounded-b-xl">
+                    <span class="text-xs font-bold text-cyan-600 uppercase">Semana 2</span>
+                    <h4 class="font-bold mt-2">Ideas que Impactan</h4>
+                    <p class="text-xs text-slate-500 mt-2">Presentaciones colaborativas sobre soberanía tecnológica.</p>
+                </div>
+                <div class="p-6 border-t-4 border-indigo-500 bg-slate-50 rounded-b-xl">
+                    <span class="text-xs font-bold text-indigo-600 uppercase">Semana 3</span>
+                    <h4 class="font-bold mt-2">Datos con Privacidad</h4>
+                    <p class="text-xs text-slate-500 mt-2">Formularios anónimos para el diagnóstico escolar.</p>
+                </div>
+                <div class="p-6 border-t-4 border-yellow-500 bg-slate-50 rounded-b-xl">
+                    <span class="text-xs font-bold text-yellow-600 uppercase">Semana 4</span>
+                    <h4 class="font-bold mt-2">Soberanía Real</h4>
+                    <p class="text-xs text-slate-500 mt-2">Integración final del manifiesto y gestión de datos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido Principal -->
+    <main class="max-w-5xl mx-auto py-8 px-4 space-y-16">
+
+        <!-- TEMA 1: SEMANA 1 (CRYPTPAD DOCUMENTOS) -->
+        <section id="tema1" class="bg-white rounded-[2.5rem] shadow-xl overflow-hidden border border-blue-100 card-hover">
+            <div class="p-8 md:p-12">
+                <div class="flex items-center space-x-4 mb-6">
+                    <span class="bg-blue-600 text-white w-12 h-12 rounded-2xl flex items-center justify-center text-xl font-bold">1</span>
+                    <h2 class="text-3xl font-black text-slate-900">Fundamentos y Documentos Colaborativos</h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <div class="space-y-6">
+                        <p class="text-slate-600 leading-relaxed italic">
+                            "Colaborar no es repartirse el trabajo, es construir una inteligencia colectiva sin ceder nuestra privacidad."
+                        </p>
+                        <div class="bg-blue-50 p-6 rounded-2xl border-l-8 border-blue-400">
+                            <h5 class="font-bold text-blue-900 mb-2 uppercase text-xs tracking-tighter">TICCAD en Acción:</h5>
+                            <p class="text-sm text-blue-800">
+                                Usaremos <strong>Cryptpad Rich Text</strong>. A diferencia de las herramientas que rastrean cada palabra, aquí escribiremos un glosario de términos mexicanos de tecnología de forma 100% cifrada.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 text-white p-8 rounded-3xl">
+                        <h4 class="text-yellow-400 font-bold mb-6 uppercase italic tracking-wider flex items-center">
+                            <i class="fas fa-file-alt mr-2"></i> Actividades Semana 1
+                        </h4>
+                        <div class="space-y-6">
+                            <div class="border-l-2 border-yellow-400 pl-4 py-1">
+                                <p class="text-sm font-bold uppercase">Ejercicio 1: El Muro Colaborativo</p>
+                                <p class="text-[10px] text-slate-400 mt-2 leading-relaxed">Entren a un solo <strong>Cryptpad Documento</strong> por grupo. Cada integrante debe definir un concepto de soberanía digital con sus propias palabras. Regla de oro: Nadie borra lo del compañero, solo se mejora o se comenta.</p>
+                            </div>
+                            <div class="border-l-2 border-yellow-400 pl-4 py-1">
+                                <p class="text-sm font-bold uppercase">Ejercicio 2: Glosario de TICCAD</p>
+                                <p class="text-[10px] text-slate-400 mt-2">Investiguen qué significan las siglas TICCAD y cómo se aplican en su comunidad. Redacten un párrafo colectivo usando diferentes colores para identificar a cada autor.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-blue-600 py-4 px-8 text-white text-xs font-bold uppercase tracking-widest flex justify-between">
+                <span>Herramienta: Cryptpad Documentos</span>
+                <span>Semana 1 / 4</span>
+            </div>
+        </section>
+
+        <!-- TEMA 2 Y 3: SEMANA 2 (CRYPTPAD PRESENTACIONES) -->
+        <section id="tema2-3" class="bg-white rounded-[2.5rem] shadow-xl overflow-hidden border border-cyan-100 card-hover">
+            <div class="p-8 md:p-12">
+                <div class="flex items-center space-x-4 mb-6">
+                    <span class="bg-cyan-600 text-white w-12 h-12 rounded-2xl flex items-center justify-center text-xl font-bold">2-3</span>
+                    <h2 class="text-3xl font-black text-slate-900">Santuarios Digitales y Presentaciones</h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <div class="space-y-6">
+                        <p class="text-slate-600 leading-relaxed">
+                            Aprenderemos que una idea bien presentada puede cambiar una comunidad. Usaremos <strong>Cryptpad Presentation</strong> para dar voz a nuestra soberanía.
+                        </p>
+                        <div class="bg-cyan-50 p-6 rounded-2xl border-l-8 border-cyan-400">
+                            <h5 class="font-bold text-cyan-900 mb-2 uppercase text-xs tracking-tighter">¿Por qué Presentaciones Libres?</h5>
+                            <p class="text-sm text-cyan-800">
+                                Porque las diapositivas son para compartir conocimiento, no para vender tus datos de navegación. Aprenderemos a insertar imágenes con licencias libres directamente en nuestras láminas.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-cyan-900 text-white p-8 rounded-3xl">
+                        <h4 class="text-yellow-400 font-bold mb-6 uppercase italic tracking-wider flex items-center">
+                            <i class="fas fa-desktop mr-2"></i> Actividades Semana 2
+                        </h4>
+                        <div class="space-y-4">
+                            <div class="p-4 bg-cyan-800 rounded-xl">
+                                <p class="text-sm font-bold italic uppercase">Ejercicio 3: Pitch de Autonomía</p>
+                                <p class="text-[10px] mt-2 leading-relaxed">Creen una presentación de 3 láminas en equipo. Lámina 1: El problema de la vigilancia digital. Lámina 2: Una herramienta libre que nos protege. Lámina 3: ¿Por qué México necesita soberanía digital?</p>
+                            </div>
+                            <div class="p-4 bg-cyan-800 rounded-xl">
+                                <p class="text-sm font-bold italic uppercase">Taller de Estilo Colaborativo</p>
+                                <p class="text-[10px] mt-2 leading-relaxed">Mientras un alumno elige el fondo, otro debe buscar una imagen con licencia CC y el tercero redactar el título. Todo ocurre al mismo tiempo, sin carpetas ni archivos pesados.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-cyan-600 py-4 px-8 text-white text-xs font-bold uppercase tracking-widest flex justify-between">
+                <span>Herramienta: Cryptpad Presentaciones</span>
+                <span>Semana 2 / 4</span>
+            </div>
+        </section>
+
+        <!-- TEMA 4: SEMANA 3 (CRYPTPAD FORMULARIOS) -->
+        <section id="tema4" class="bg-white rounded-[2.5rem] shadow-xl overflow-hidden border border-indigo-100 card-hover">
+            <div class="p-8 md:p-12">
+                <div class="flex items-center space-x-4 mb-6">
+                    <span class="bg-indigo-600 text-white w-12 h-12 rounded-2xl flex items-center justify-center text-xl font-bold">4</span>
+                    <h2 class="text-3xl font-black text-slate-900">Comunicación Ética y Formularios</h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <div class="space-y-6">
+                        <p class="text-slate-600 leading-relaxed">
+                            Los datos personales son el "petróleo" del siglo XXI. Con <strong>Cryptpad Forms</strong>, aprenderemos a recolectar información sin dejar que nadie espíe a los participantes.
+                        </p>
+                        <div class="bg-indigo-50 p-6 rounded-2xl border-l-8 border-indigo-400">
+                            <h5 class="font-bold text-indigo-900 mb-2 uppercase text-xs tracking-tighter">Privacidad por Diseño:</h5>
+                            <p class="text-sm text-indigo-800 italic">
+                                En México, la protección de datos es un derecho constitucional. Usar formularios que no rastrean la IP del usuario es un acto de respeto y ética profesional.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-indigo-900 text-white p-8 rounded-3xl">
+                        <h4 class="text-yellow-400 font-bold mb-6 uppercase italic tracking-wider flex items-center">
+                            <i class="fas fa-poll mr-2"></i> Actividades Semana 3
+                        </h4>
+                        <div class="space-y-6">
+                            <div class="border-b border-indigo-700 pb-4">
+                                <p class="text-sm font-bold uppercase text-yellow-100">Ejercicio 4: Censo de Privacidad</p>
+                                <p class="text-[10px] text-slate-400 mt-2 leading-relaxed">Diseñen una encuesta de 5 preguntas sobre hábitos digitales de sus compañeros (ej. ¿Cuántas horas pasan en redes? ¿Leen los términos y condiciones?). Compartan el link y analicen los resultados en tiempo real.</p>
+                            </div>
+                            <div class="border-b border-indigo-700 pb-4">
+                                <p class="text-sm font-bold uppercase">Análisis de Resultados Éticos</p>
+                                <p class="text-[10px] text-slate-400 mt-2">Observen cómo Cryptpad genera gráficas automáticas. ¿Se puede saber quién contestó cada cosa? Discutan por qué el anonimato ayuda a tener respuestas más honestas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-indigo-600 py-4 px-8 text-white text-xs font-bold uppercase tracking-widest flex justify-between">
+                <span>Herramienta: Cryptpad Formularios</span>
+                <span>Semana 3 / 4</span>
+            </div>
+        </section>
+
+        <!-- TEMA 5: SEMANA 4 (INTEGRACIÓN) -->
+        <section id="tema5" class="bg-white rounded-[2.5rem] shadow-xl overflow-hidden border border-yellow-100 card-hover">
+            <div class="p-8 md:p-12">
+                <div class="flex items-center space-x-4 mb-6">
+                    <span class="bg-yellow-500 text-white w-12 h-12 rounded-2xl flex items-center justify-center text-xl font-bold">5</span>
+                    <h2 class="text-3xl font-black text-slate-900">Autonomía y Proyecto Integrador</h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <div class="space-y-6">
+                        <p class="text-slate-600 leading-relaxed italic">
+                            "La soberanía digital se demuestra haciendo, no solo diciendo."
+                        </p>
+                        <div class="bg-yellow-50 p-6 rounded-2xl border-l-8 border-yellow-400">
+                            <h5 class="font-bold text-yellow-900 mb-2 uppercase text-xs tracking-tighter">Entregables finales:</h5>
+                            <p class="text-sm text-yellow-800">
+                                Al terminar esta semana, cada equipo tendrá una carpeta compartida que demuestra su dominio de las TICCAD libres.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 text-white p-8 rounded-3xl">
+                        <h4 class="text-yellow-400 font-bold mb-6 uppercase italic tracking-wider flex items-center">
+                            <i class="fas fa-rocket mr-2"></i> Evaluación Final (50%)
+                        </h4>
+                        <div class="p-4 bg-slate-800 rounded-xl border border-yellow-400/30">
+                            <p class="text-sm font-bold uppercase text-yellow-400 mb-3">Kit de Soberanía Grupal</p>
+                            <div class="space-y-4 text-[10px] leading-relaxed">
+                                <p><i class="fas fa-check-circle text-green-400 mr-2"></i> <strong>Documento:</strong> El Manifiesto Digital del equipo con reglas de convivencia.</p>
+                                <p><i class="fas fa-check-circle text-green-400 mr-2"></i> <strong>Presentación:</strong> Resumen visual de los hallazgos de su investigación de la semana 1.</p>
+                                <p><i class="fas fa-check-circle text-green-400 mr-2"></i> <strong>Formulario:</strong> El link de su encuesta de privacidad con al menos 10 respuestas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-slate-100 p-6 text-center italic text-xs uppercase tracking-widest font-bold border-t border-slate-200">
+                "Ustedes son los arquitectos de su propio espacio digital." - Ing. Garcia Ramos
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-500 py-16 px-4 text-center mt-20">
+        <div class="max-w-7xl mx-auto border-t border-slate-800 pt-10">
+            <p class="text-white font-bold text-lg mb-2 italic uppercase tracking-widest">Cultura Digital II</p>
+            <p class="text-sm mb-4">Ing. Cruz Enrique Garcia Ramos</p>
+            <a href="index.html" class="bg-white/10 text-white px-8 py-3 rounded-full hover:bg-white/20 transition text-xs font-bold uppercase tracking-widest inline-flex items-center">
+                <i class="fas fa-arrow-left mr-3"></i> Regresar al Portal Principal
+            </a>
+            <p class="text-[10px] mt-10 opacity-30 uppercase tracking-tighter">Bachillerato Nacional - Modelo Educativo 2025</p>
+        </div>
+    </footer>
+
+</body>
+</html>
